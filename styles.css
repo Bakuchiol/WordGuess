@@ -3,3 +3,92 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    background-color: black;
+    color: #fff;
+    display: flex;
+    flex-direction: row !important; /* responsiveness*/
+    padding: 30px;
+}
+.deviceBody {
+    border: solid burlywood;
+    width: 100%;
+    height: 90vh;
+    padding: 8px;
+}
+.screenWrapper {
+    border: solid salmon;
+    width: 100%;
+    height: 100%;
+}
+/* RULES SCREEN */
+/* RULES SCREEN */
+/* RULES SCREEN */
+
+/* MAIN GAME SCREEN */
+.gameScreenBody {
+    border: solid gold;
+    width: 100%;
+    height: 100%;
+}
+.gameTitleBox{
+    text-align: center;
+    padding-top: 6px;
+    width: 100%;
+    height: 50px;
+}
+/* Top Screen */
+.gameScreenTop {
+    border: solid lightblue;
+    width: 100%;
+    height: 43%;
+}
+.word {
+    border: solid palevioletred;
+    width: 100%;
+    height: 60%;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.scoreBox {
+    border: solid seagreen;
+    width: 65%;
+    height: 40%;
+}
+.score {
+    text-align: center;
+}
+#scoreTitle {
+    text-decoration: underline;
+    letter-spacing: .1em;
+    margin: 5px 0 5px 0;
+}
+.players {
+    margin: 0 5px 0 5px;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    text-decoration: none;
+}
+.players > div {
+    border: solid royalblue;
+    width: 100%;
+    height: auto;
+}
+.players > div > div {
+    border: solid royalblue;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+}
+
+/* Bottom Screen */
+.gameScreenBottom {
+    border: solid lavenderblush;
+    width: 100%;
+    height: 50%;
+}

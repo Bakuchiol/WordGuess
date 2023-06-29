@@ -27,11 +27,24 @@ body {
 .screenWrapper {
     border: solid salmon;
     background-image: url(images/turqouiseSky.gif);
+    background-size: cover;
     width: 100%;
     height: 100%;
 }
 /* RULES SCREEN */
-/* RULES SCREEN */
+.rulesScreen {
+    background-color: rgb(68, 170, 210);
+    background-image: url(images/spiritedAway.jpeg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    width: 100%;
+    height: 100%;
+}
+
+.playButton {
+    border: solid black;
+}
 /* RULES SCREEN */
 
 /* MAIN GAME SCREEN */

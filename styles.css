@@ -59,19 +59,33 @@ body {
     text-shadow: 1px 1px 2px rgb(191, 168, 38);
     font-size: 50px;
 }
-.playButton {
-    border: solid black;
-}
 .rules > * {
-    margin-block-start: 15px;
+    margin-block-start: 10px;
     line-height: 1.5em;
     font-family: 'Press Start 2P', cursive;
 }
-.welcome {
-    font-size: 25px;
-}
 .playRules {
-    font-size: 12px;
+    font-size: 10px;
+    text-shadow: 2px 2.5px 5px rgb(103, 124, 135);
+}
+.playDesc {
+    font-style: italic;
+    font-size: 8px;
+    text-align: center;
+    text-shadow: 2px 2.5px 5px rgb(61, 73, 79);
+}
+.startPlayButton{
+    width: 120px;
+    height: 40px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    color: rgb(253, 219, 23);
+    text-shadow: 1px 1px 2px rgb(26, 65, 101);
+    border: none;
+    border-radius: 7px;
+    box-shadow: 1.5px 1.5px 5px rgb(61, 73, 79);
+    
+
 }
 
 /* RULES SCREEN */

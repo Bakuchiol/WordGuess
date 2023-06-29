@@ -15,6 +15,9 @@ body {
     flex-direction: row !important; /* responsiveness*/
     padding: 30px;
 }
+
+
+/* device */
 .deviceBody {
     border: solid burlywood;
     width: 100%;
@@ -59,13 +62,22 @@ body {
     align-items: center;
 }
 .scoreBox {
-    border: solid seagreen;
-    width: 65%;
+    border: solid orangered;
+    width: 100%;
     height: 40%;
+    display: flex;
 }
 .currentStatus {
+    border: solid gold;
     padding: 15px;
     font-size: 25px;
+    width: 70%;
+}
+#wizard {
+    border: solid red;
+    /* padding-top: 20px; */
+    /* width: 100px;
+    height: 120px; */
 }
 
 

@@ -38,6 +38,7 @@ body {
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: bottom;
+    background-attachment: fixed;
     width: 100%;
     height: 100%;
     padding: 30px;
@@ -49,7 +50,7 @@ body {
     margin-top: 50px;
     padding: 15px;
     background-color: (255, 255, 255, 2);
-    box-shadow: inset 0 0 0 200px rgba(255,255,255,0.3);
+    box-shadow: inset 0 0 0 2000px rgba(255,255,255,0.3);
     backdrop-filter: blur(40px);
     text-align: center;
 }
@@ -271,7 +272,7 @@ body {
     text-transform: capitalize;
 }
 .guessButton {
-    width: 100px;
+    width: 120px;
     height: 40px;
     border-radius: 12px;
     letter-spacing: .1em;
@@ -294,6 +295,9 @@ body {
     font-size: 10px;
     color: rgb(54, 105, 126);
 }
+.selectBtn2 {
+    display: none;
+}
 
 
 /* source */
@@ -315,4 +319,6 @@ text-shadow: 1px 1px 2px rgb(54, 105, 126); */
     4. style input - border?
     8. border screen
     9. border phone body
+    10. button bg colors
+    11. font colors - too jarring
  */

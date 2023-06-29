@@ -8,6 +8,7 @@ let spellCast = document.querySelector('.word')
 let rulesScreen = document.querySelector('.rulesScreen')
 let gameScreenBody = document.querySelector('.gameScreenBody')
 let gameScreenTop = document.querySelector('.gameScreenTop')
+let player = document.querySelector('.victoryPlayer span')
 
 
 /******************************************** VARIABLES */
@@ -24,11 +25,25 @@ const startGame = () => {
     gameScreenTop.classList.add('appear');
 }
 
-// const ruleNotif = () => {
-//     let inputWrapper = document.querySelector('.inputWrapper')
+let inputWrapper = document.querySelector('.inputWrapper');
+    let rulesRecap = document.querySelector('.rulesRecap');
+    let selectBtn = document.querySelector('.selectBtn');
+    let selectBtn2 = document.querySelector('.selectBtn2');
 
+// select button
+const ruleNotif = () => {
+    inputWrapper.style.display = "none"
+    rulesRecap.style.display = "block"
+    selectBtn.style.display = "none"
+    selectBtn2.style.display = "block"
+}
+const ruleOut = () => {
+    rulesRecap.style.display = "none"
+    selectBtn2.style.display = "none"
+    selectBtn.style.display = "block"
+    inputWrapper.style.display = "block"
+}
 
-// }
 /******************************************************* GAME FUNCTIONALITY */
 // event listener for guess button
 const guessWord = () => {
@@ -71,16 +86,17 @@ const guessWord = () => {
     }
 }
 
-let player = document.querySelector('.victoryPlayer span')
 
 // swap players
 const playerSwitch = () => {
     if(currentPlayer === 1){
         currentPlayer = 2;
-        player.textContent = "2"
+        player.textContent = "2" // win screen
+        // change img?
     }else{
         currentPlayer = 1; // goes back to player1
-        player.textContent = "1"
+        player.textContent = "1" // win screen
+        // change img?
     }
     // update player number
     playerNumber.textContent = currentPlayer;
@@ -96,6 +112,8 @@ const wordClue = () => {
     for(let i = 0; i < spellClue.length; i++){
         spell += `${spellClue[i]} `
     }
+
+    guessButton.textContent = "GUESS"
 
     spellCast.textContent = spell;
     console.log("shows up every key")

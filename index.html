@@ -51,14 +51,18 @@
                 <!-- bottom screen -  -->
                 <div class="gameScreenBottom">
                     <!-- hintbox -->
-                    <div class="hintBox">
-                        <p class="hint">HINT</p>
-                        <div class="wordHint"></div>
+                    <div class="playBox">
+                        <p class="playRule">rules</p>
+                        <p class="currentPlayer">Player <span></span></p>
                     </div>
                     <!-- type input -->
                     <div class="inputBox">
                         <p class="typeHere">TYPE HERE</p>
                         <input type="text" name="" id="inputGuess">
+                    </div>
+                    <!-- GUESS BUTTON -->
+                    <div class="guessBox">
+                        <button class="guessButton" onclick="guessWord()">GUESS</button>
                     </div>
                     <!-- button box -->
                     <div class="buttons">

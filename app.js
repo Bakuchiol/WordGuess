@@ -2,7 +2,8 @@
 let guessButton = document.querySelector('.guessButton');
 let input = document.querySelector('input');
 let playerNumber = document.querySelector('span');
-let currentStatus = document.querySelector('.currentStatus')
+let currentStatus = document.querySelector('.currentStatus');
+let spellCast = document.querySelector('.word')
 
 
 /******************************************** VARIABLES */
@@ -50,4 +51,14 @@ const playerSwitch = () => {
     playerNumber.textContent = currentPlayer;
     // clear input
     input.value = "";
+}
+
+// make spell casted (word) display as clues on screen
+// corresponding with word length
+const wordClue = () => {
+    let spellClue = wordSpell(currentPlayer - 1); // current player (1)
+    let spell = "";
+    for(let i = 0; i < spellClue.length; i++){
+        spell += `${spell[i] }`
+    }
 }

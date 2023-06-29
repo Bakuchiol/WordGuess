@@ -1,0 +1,36 @@
+****** WORD GUESSING GAME *****
+Two player game, each take turns guessing the word
+1. each player able to input a word for each other to guess
+2. get value from input and store it in an empty array
+3. store values of player one at position one (always first in array)
+4. store values of player two at position two (always second)
+
+
+Swap players
+5. Make function to be able to swap players
+6. be able to determine who's the current player - initial player is player one
+7. reset input value after every turn
+8. have each player be able to enter own words THEN game starts
+
+game start
+10. be able to tell game status
+11. status for entering words -- update status screen
+12. status for game start (can start guessing) -- update status screen
+9. entered word should show up on screen as blanks
+13. be able to display guessed word
+14. function to be able to see corresponding blanks from variable
+
+check if letter found!
+15. be able to detect letter matching to word player is guessing
+    15a. variable equal to value input by current player
+    15b. check if letter or word input match with guess word- indexOf
+    15c. if letter not found -- change player
+
+check if letter found!
+16. if letter found
+    16a. letter guessed right show on screen dependent on index
+    16b. place letter guessed on corresponding place in word - swap player
+    16c. prevent typing letter again if in word (ex: css - must be able to show both s)
+
+Win / Lose
+17. first player to guess word first wins other loses

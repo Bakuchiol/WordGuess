@@ -57,34 +57,11 @@ body {
     width: 65%;
     height: 40%;
 }
-.score {
-    text-align: center;
+.currentStatus {
+    padding: 15px;
+    font-size: 25px;
 }
-#scoreTitle {
-    text-decoration: underline;
-    letter-spacing: .1em;
-    margin: 5px 0 5px 0;
-}
-.players {
-    margin: 0 5px 0 5px;
-    height: 80px;
-    display: flex;
-    justify-content: space-around;
-    text-decoration: none;
-}
-.players > div {
-    border: solid royalblue;
-    width: 100%;
-    height: auto;
-}
-.players > div > div {
-    border: solid royalblue;
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    font-size: 50px;
-}
+
 
 /* Bottom Screen */
 .gameScreenBottom {

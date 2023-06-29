@@ -10,48 +10,35 @@ let spellCast = document.querySelector('.word')
 let words = []; // store words entered here (words to guess)
 let wordSpell = []; // show words as clues
 let currentPlayer = 1; // initial player one
-let standing = false; //status at start
+let standing = false; //status
 
 
 
 // event listener for guess button
 const guessWord = () => {
-    // console.log('button workssss');
-    // console.log(input.value);
-    // define game status/standing - players storing words
     if(standing === false){
         words.unshift(input.value.toLowerCase());
-        // words as spells hidden
         let spell = "";
         for(let i = 0; i < input.value.length; i++){
-            spell += `_`;
+            spell += `_ `
         }
         wordSpell.unshift(spell);
-        console.log(spell)
-
         playerSwitch();
-        // tell if second player turn
         if(words.length === 2){
             currentStatus.textContent = `Guess your opponent's spell!`
             wordClue();
-            standing = true; // players already playing game
+            standing = true;
         }
     }else{
-        //make sure wordClue is executed PROGRAM STATUS2
-        // check if letter found in spell(word)
         let letter = input.value.toLowerCase() // letter/word player guessed
         let spell = words[currentPlayer - 1]// spell(word) player entered
-        //checks word if letter is there
         let index = spell.indexOf(letter) // finds letter and stores inside variable index
-        //if letter not found
         if(index !== -1){
             letterFound(letter, index)
         }else{
             playerSwitch()
-            console.log('switched player wrong letter')
         }
         wordClue()
-        console.log("shows up every correct guess")
     }
 }
 
@@ -62,25 +49,18 @@ const playerSwitch = () => {
     }else{
         currentPlayer = 1; // goes back to player1
     }
-    // update player number
     playerNumber.textContent = currentPlayer;
-    // clear input
     input.value = "";
 }
 
-// make spell casted (word) display as clues on screen
-// corresponding with word length
 const wordClue = () => {
     let spellClue = wordSpell[currentPlayer - 1]; // current player (1)
     let spell = "";
     for(let i = 0; i < spellClue.length; i++){
-        spell += `${spellClue[i]} `
+        spell += `${spellClue[i] }`
     }
     spellCast.textContent = spell;
-    console.log("shows up every key")
-    // console.log(spell)
-
-
+    console.log(spell)
 }
 
 // function to check if letter is found in word
@@ -98,35 +78,10 @@ const letterFound = (letter, index) => {
             }
         }
         wordSpell[currentPlayer - 1] = spell;
-        // replace _ with found letter
         words[currentPlayer - 1] = word.replace(letter, '_');
-        console.log(words[currentPlayer - 1], "down every correct guess")
-        // if index -1, letter no longer found (avoid repetition of entering same letter)
         index = words[currentPlayer - 1].indexOf(letter);
 
-
-        // test
-        
-        // test
-
-
-
-        // test
-        let checker = true;
-        let sample = words[currentPlayer - 1].split('');
-        sample.forEach(bet => {
-            if (bet != '_') {
-                checker = false;
-            }
-        });
-        if (checker == true) {
-            console.log('did it?');
-            delayReload(3000);
-        }
-        // test
-
-
-    } while(index !== -1) //get out of loop
+    } while(index !== -1)
 }
 
 // RESET/RELOAD

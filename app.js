@@ -33,7 +33,12 @@ const guessWord = () => {
         // tell if second player turn
         if(words.length === 2){
             currentStatus.textContent = `Guess your opponent's spell!`
+            wordClue();
+            standing = true;
         }
+    }else{
+        playerSwitch()
+        wordClue()
     }
 
     console.log(words);
@@ -56,9 +61,11 @@ const playerSwitch = () => {
 // make spell casted (word) display as clues on screen
 // corresponding with word length
 const wordClue = () => {
-    let spellClue = wordSpell(currentPlayer - 1); // current player (1)
+    let spellClue = wordSpell[currentPlayer - 1]; // current player (1)
     let spell = "";
     for(let i = 0; i < spellClue.length; i++){
-        spell += `${spell[i] }`
+        spell += `${spellClue[i] }`
     }
+    spellCast.textContent = spell;
+    console.log(spell)
 }

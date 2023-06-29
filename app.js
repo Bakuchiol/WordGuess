@@ -25,6 +25,8 @@ const startGame = () => {
 }
 
 // const ruleNotif = () => {
+//     let inputWrapper = document.querySelector('.inputWrapper')
+
 
 // }
 /******************************************************* GAME FUNCTIONALITY */
@@ -69,12 +71,16 @@ const guessWord = () => {
     }
 }
 
+let player = document.querySelector('.victoryPlayer span')
+
 // swap players
 const playerSwitch = () => {
     if(currentPlayer === 1){
         currentPlayer = 2;
+        player.textContent = "2"
     }else{
         currentPlayer = 1; // goes back to player1
+        player.textContent = "1"
     }
     // update player number
     playerNumber.textContent = currentPlayer;

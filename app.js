@@ -120,7 +120,7 @@ const letterFound = (letter, index) => {
         console.log(wordSpell[currentPlayer - 1])
 
 
-        // test
+        // if win
         let checker = true;
         let sample = words[currentPlayer - 1].split('');
         sample.forEach(bet => {
@@ -130,17 +130,14 @@ const letterFound = (letter, index) => {
         });
         if (checker == true) {
 
-
             let winScreen = document.querySelector('.winScreen')
 
             gameScreenBody.style.display = "none"
             winScreen.classList.toggle('appear')
-
             console.log('did it?');
-            delayReload(5000);
+            // delayReload(5000);
 
             // TO DO win screen:
-            // take out all screens and replace w/ win banners
             // add button PLAY AGAIN take out all buttons (select and start)
         }
 

@@ -84,8 +84,6 @@ body {
     border: none;
     border-radius: 7px;
     box-shadow: 1.5px 1.5px 5px rgb(61, 73, 79);
-    
-
 }
 
 /* RULES SCREEN */
@@ -118,6 +116,43 @@ body {
     height: 100%;
     display: none;
 }
+.victoryContainer {
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+}
+.victoryContainer > * {
+    /* border: solid khaki; */
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+    margin-top: 30px;
+}
+#dancingWizard {
+    height: 300px;
+    width: auto;
+    margin: 10px 0 30px 0;
+}
+.victoryMsg{
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+}
+.playAgainButton {
+    margin-top: 30px;
+    width: 155px;
+    height: 60px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    color: rgb(253, 219, 23);
+    text-shadow: 1px 1px 2px rgb(26, 65, 101);
+    border: none;
+    border-radius: 7px;
+    box-shadow: 1.5px 1.5px 5px rgb(61, 73, 79);
+}
+
+
+
 
 /* Top Screen */
 .gameScreenTop {

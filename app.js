@@ -37,9 +37,20 @@ const guessWord = () => {
             standing = true;
         }
     }else{
-        playerSwitch()
+        // check if letter found in spell(word)
+        let letter = input.value // letter/word player guessed
+        let spell = words[currentPlayer - 1]// spell(word) player entered
+        //checks word if letter is there
+        let index = spell.indexOf(letter) // finds letter and stores inside variable index
+        //if letter not found
+        if(index !== -1){
+            letterFound(letter, index)
+        }else{
+            playerSwitch()
+        }
         wordClue()
     }
+
 
     console.log(words);
 
@@ -68,4 +79,30 @@ const wordClue = () => {
     }
     spellCast.textContent = spell;
     console.log(spell)
+}
+
+// function to check if letter is found in word
+const letterFound = (letter, index) => {
+    do{
+        let word = words[currentPlayer - 1];
+        let spellCast = wordSpell[currentPlayer - 1];
+
+        let spell = "";
+        for(let i = 0; i < word.length; i++){
+            if(index !== i){
+                spell += spellCast[i] // letter that was there
+            }else{ // if letter/word input is same
+                spell += word[i]; // replaces underscore with letter at that position
+            }
+        }
+        wordSpell[currentPlayer - 1] - spell;
+        // replace found letter with _
+        words[currentPlayer - 1] - word.replace(letter, '_');
+        // console.log(words[currentPlayer - 1])
+                // if index -1, letter no longer found (avoid repetition)
+        index = words[currentPlayer - 1].indexOf(letter);
+    } while(index !== -1) {
+
+
+    }
 }

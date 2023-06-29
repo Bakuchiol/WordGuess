@@ -1,7 +1,7 @@
 /******************************************** DOM */
 let guessButton = document.querySelector('.guessButton');
 let input = document.querySelector('input');
-let playerNumber = document.querySelector('span');
+let playerNumber = document.querySelector('.currentPlayer span');
 let currentStatus = document.querySelector('.currentStatus');
 let spellCast = document.querySelector('.word')
 
@@ -77,7 +77,6 @@ const wordClue = () => {
         spell += `${spellClue[i]} `
     }
 
-    let test = document.querySelector('#screenLoad')
 
     spellCast.textContent = spell;
     console.log("shows up every key")
@@ -106,6 +105,7 @@ const letterFound = (letter, index) => {
         console.log(words[currentPlayer - 1], "down every correct guess")
         // if index -1, letter no longer found (avoid repetition of entering same letter)
         index = words[currentPlayer - 1].indexOf(letter);
+        console.log(wordSpell[currentPlayer - 1])
 
 
         // test

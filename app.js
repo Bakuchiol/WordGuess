@@ -7,6 +7,7 @@ let currentStatus = document.querySelector('.currentStatus')
 
 /******************************************** VARIABLES */
 let words = []; // store words entered here (words to guess)
+let wordSpell = []; // show words as clues
 let currentPlayer = 1; // initial player one
 let standing = false;
 
@@ -19,6 +20,14 @@ const guessWord = () => {
     // define game status/standing - players storing words
     if(standing === false){
         words.unshift(input.value);
+        // words as spells hidden
+        let spell = "";
+        for(let i = 0; i < input.value.length; i++){
+            spell += `_ `
+        }
+        wordSpell.unshift(spell);
+        console.log(spell)
+
         playerSwitch();
         // tell if second player turn
         if(words.length === 2){

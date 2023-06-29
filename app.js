@@ -106,12 +106,6 @@ const letterFound = (letter, index) => {
 
 
         // test
-        
-        // test
-
-
-
-        // test
         let checker = true;
         let sample = words[currentPlayer - 1].split('');
         sample.forEach(bet => {
@@ -122,6 +116,11 @@ const letterFound = (letter, index) => {
         if (checker == true) {
             console.log('did it?');
             delayReload(3000);
+
+            // TO DO win screen:
+            // change both screens TOP: trophy BOTTOM: stars
+            // take out all screens and replace w/ win banners
+            // add button PLAY AGAIN take out all buttons (select and start)
         }
         // test
 

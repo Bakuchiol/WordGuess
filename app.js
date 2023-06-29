@@ -5,6 +5,7 @@ let playerNumber = document.querySelector('.currentPlayer span');
 let currentStatus = document.querySelector('.currentStatus');
 let spellCast = document.querySelector('.word')
 
+let rulesScreen = document.querySelector('.rulesScreen')
 let gameScreenBody = document.querySelector('.gameScreenBody')
 let gameScreenTop = document.querySelector('.gameScreenTop')
 
@@ -18,15 +19,15 @@ let standing = false; //status at start
 
 // start game
 const startGame = () => {
-    let rulesScreen = document.querySelector('.rulesScreen')
-
     rulesScreen.classList.add('hide');
     gameScreenBody.style.display = "block"
     gameScreenTop.classList.add('appear');
-
 }
 
+// const ruleNotif = () => {
 
+// }
+/******************************************************* GAME FUNCTIONALITY */
 // event listener for guess button
 const guessWord = () => {
     // console.log('button workssss');
@@ -90,11 +91,9 @@ const wordClue = () => {
         spell += `${spellClue[i]} `
     }
 
-
     spellCast.textContent = spell;
     console.log("shows up every key")
     console.log(spell)
-
 
 }
 
@@ -131,21 +130,19 @@ const letterFound = (letter, index) => {
         });
         if (checker == true) {
 
-            let winTop = document.querySelector('.winTop')
 
-            gameScreenTop.classList.toggle('hide')
-            winTop.classList.toggle('appear')
+            let winScreen = document.querySelector('.winScreen')
+
+            gameScreenBody.style.display = "none"
+            winScreen.classList.toggle('appear')
 
             console.log('did it?');
-            delayReload(3000);
+            delayReload(5000);
 
             // TO DO win screen:
-            // change both screens TOP: trophy BOTTOM: stars
             // take out all screens and replace w/ win banners
             // add button PLAY AGAIN take out all buttons (select and start)
         }
-        // test
-
 
     } while(index !== -1) //get out of loop
 }

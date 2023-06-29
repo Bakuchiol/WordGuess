@@ -1,11 +1,12 @@
 /******************************************** DOM */
 let guessButton = document.querySelector('.guessButton');
 let input = document.querySelector('input');
+let playerNumber = document.querySelector('span');
 
 
 /******************************************** VARIABLES */
 let words = []; // store words entered here (words to guess)
-let currentPlayer = false; // initial player one
+let currentPlayer = 1; // initial player one
 
 
 
@@ -15,12 +16,19 @@ const guessWord = () => {
     // console.log(input.value);
     words.unshift(input.value);
     // console.log(words);
+    playerSwitch()
 
 }
 
 // swap players
 const playerSwitch = () => {
-    if(currentPlayer === false){
-        currentPlayer = true;
+    if(currentPlayer === 1){
+        currentPlayer = 2;
+    }else{
+        currentPlayer = 1; // goes back to player1
     }
+    // update player number
+    playerNumber.textContent = currentPlayer;
+    // clear input
+    input.value = "";
 }

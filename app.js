@@ -79,11 +79,9 @@ const wordClue = () => {
 
     let test = document.querySelector('#screenLoad')
 
-    test.style.display = "none"
-    spellCast.classList.toggle('appear')
     spellCast.textContent = spell;
     console.log("shows up every key")
-    // console.log(spell)
+    console.log(spell)
 
 
 }

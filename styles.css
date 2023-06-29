@@ -215,13 +215,41 @@ body {
 .currentPlayer span{
     color: rgb(253, 219, 23);
 }
+
+/* mini Rules recap box */
+.rulesRecap {
+    /* border: solid lawngreen; */
+    font-family: 'Press Start 2P', cursive;
+    width: 100%;
+    height: 150px;
+    font-size: 12px;
+    margin: 40px 0 50px 0;
+    display: none;
+}
+.rulesRecapTitle {
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 15px;
+    color:orange ;
+}
+.rulesRecap > ol {
+    margin-left: 60px;
+    line-height: 1.5em;
+    color: whitesmoke;
+}
+
+
+
+
 /* input area */
 .inputWrapper {
     border: solid bisque;
+    width: 100%;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px 0 30px 0;
+    margin: 40px 0 50px 0;
 }
 .inputBox {
     border: solid rebeccapurple;
@@ -285,9 +313,6 @@ text-shadow: 1px 1px 2px rgb(54, 105, 126); */
     2. title
     3. swap player pics?
     4. style input - border?
-    5. rules
-    6. win TOP
-    7. win BOTTOM
     8. border screen
     9. border phone body
  */

@@ -117,6 +117,13 @@ const letterFound = (letter, index) => {
             }
         });
         if (checker == true) {
+
+            let gameScreenTop = document.querySelector('.gameScreenTop')
+            let winTop = document.querySelector('.winTop')
+
+            gameScreenTop.classList.toggle('hide')
+            winTop.classList.toggle('appear')
+
             console.log('did it?');
             delayReload(3000);
 

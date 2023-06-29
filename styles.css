@@ -52,6 +52,14 @@ body {
     color: rgb(253, 219, 23);
 }
 
+/* WIN SCREEN */
+.winTop {
+    background-image: url(images/tinyWizard.gif);
+    width: 100%;
+    height: 43%;
+    display: none;
+}
+
 /* Top Screen */
 .gameScreenTop {
     border: solid lightblue;
@@ -146,7 +154,7 @@ body {
     letter-spacing: .1em;
     font-family: 'Press Start 2P', cursive;
     font-size: 16px;
-    color: rgb(54, 105, 126);
+    color: rgb(46, 89, 107);
     text-shadow: 2px 2.5px 5px rgb(103, 124, 135);
 }
 .buttons {

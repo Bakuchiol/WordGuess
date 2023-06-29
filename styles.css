@@ -41,8 +41,6 @@ body {
     width: 100%;
     height: 100%;
     padding: 30px;
-    /* test */
-    display: none;
 }
 .rulesDesc{
     border-radius: 5px;
@@ -97,6 +95,8 @@ body {
     border: solid gold;
     width: 100%;
     height: 100%;
+    /* test */
+    display: none;
 }
 .gameTitleBox{
     text-align: center;
@@ -124,6 +124,7 @@ body {
     width: 100%;
     height: 43%;
     font-family: 'Press Start 2P', cursive;
+    display: none;
 }
 .word {
     border: solid palevioletred;

@@ -5,6 +5,9 @@ let playerNumber = document.querySelector('.currentPlayer span');
 let currentStatus = document.querySelector('.currentStatus');
 let spellCast = document.querySelector('.word')
 
+let gameScreenBody = document.querySelector('.gameScreenBody')
+let gameScreenTop = document.querySelector('.gameScreenTop')
+
 
 /******************************************** VARIABLES */
 let words = []; // store words entered here (words to guess)
@@ -12,6 +15,16 @@ let wordSpell = []; // show words as clues
 let currentPlayer = 1; // initial player one
 let standing = false; //status at start
 
+
+// start game
+const startGame = () => {
+    let rulesScreen = document.querySelector('.rulesScreen')
+
+    rulesScreen.classList.add('hide');
+    gameScreenBody.style.display = "block"
+    gameScreenTop.classList.add('appear');
+
+}
 
 
 // event listener for guess button
@@ -118,7 +131,6 @@ const letterFound = (letter, index) => {
         });
         if (checker == true) {
 
-            let gameScreenTop = document.querySelector('.gameScreenTop')
             let winTop = document.querySelector('.winTop')
 
             gameScreenTop.classList.toggle('hide')

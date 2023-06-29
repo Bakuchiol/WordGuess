@@ -23,6 +23,7 @@ body {
 }
 .screenWrapper {
     border: solid salmon;
+    background-image: url(images/turqouiseSky.gif);
     width: 100%;
     height: 100%;
 }

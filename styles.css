@@ -32,6 +32,23 @@ body {
     height: 100%;
 }
 /* RULES SCREEN */
+.sparkles{
+    height: 70px;
+    width: auto;
+    margin-right: 80px;
+    margin-left: 30px;
+}
+.rightSparkle {
+    transform: rotate(90deg);
+}
+.sparkle1 {
+    /* border: solid seagreen; */
+    height: 100px;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    z-index: -1;
+}
 .rulesScreen {
     background-color: rgb(68, 170, 210);
     background-image: url(images/spiritedAway.jpeg);
@@ -45,8 +62,8 @@ body {
 .rulesDesc{
     border-radius: 5px;
     width: 100%;
-    height: 70%;
-    margin-top: 50px;
+    height: 77%;
+    margin-top: 35px;
     padding: 15px;
     background-color: (255, 255, 255, 2);
     box-shadow: inset 0 0 0 2000px rgba(255,255,255,0.3);
@@ -214,16 +231,30 @@ body {
     height: auto;
     text-align: center;
     margin: 20px 0 10px 0;
-    font-size: 25px;
 }
 .currentPlayer {
     /* border: solid magenta; */
+    font-size: 25px;
     text-align: right;
     margin-right: 40px;
-}
-.currentPlayer span{
     color: rgb(253, 219, 23);
 }
+.currentPlayer span{
+    text-decoration: underline;
+}
+
+/* TEST wrong guess */
+.wrongGuess {
+    font-size: 12px;
+    margin-top: 15px;
+    margin-right: -140px;
+    color: rgb(21, 74, 89);
+}
+.wrongGuess span {
+    color: rgb(91, 200, 231);
+}
+/* TEST wrong guess */
+
 
 /* mini Rules recap box */
 .rulesRecap {
@@ -258,15 +289,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 40px 0 50px 0;
+    margin: 30px 0 35px 0;
 }
 .inputBox {
     /* border: solid rebeccapurple; */
     height: 100%;
     text-align: center;
 }
-.inputBox > p {
+.typeHere {
     font-size: 15px;
+}
+.inputLabel{
+    font-size: 10px;
     color: #000;
 }
 .inputBox > * {

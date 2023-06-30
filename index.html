@@ -18,7 +18,11 @@
             <!-- rules screen w/ background - display none -->
             <div class="rulesScreen">
                 <div class="rulesDesc">
-                    <h1 class="rulesTitle">Word Duel</h1>
+                    <div class="sparkle1">
+                        <img src="/images/sparkles.gif" alt="" class="sparkles">
+                        <img src="/images/sparkles.gif" alt="" class="sparkles rightSparkle">
+                    </div>
+                        <h1 class="rulesTitle">Word Duel</h1>
                     <div class="rules">
                         <p class="playRules playDesc">Wizards are just like us, they can end up fumbling a word or two, and with magic, that's pretty bad! So what's a spell caster to do?</p>
                         <p class="playRules">Both duelists think of
@@ -26,7 +30,7 @@
                             <br>
                             Once you two have figured out what words you want to give your opponent, it's <span>dueling</span> time!
                             <br>
-                            Whoever guesses their word's letters first <span>wins</span>!
+                            Whoever guesses their opponent's words first <span>wins</span>!
                             <br>
                             So, are you ready for a <span>word duel</span>?!
                         </p>
@@ -75,6 +79,7 @@
                     <!--  player box -->
                     <div class="playBox">
                         <p class="currentPlayer">Player <span>1</span></p>
+                        <!-- <p class="wrongGuess">Wrong Guess: <span></span></p> -->
                     </div>
 
                     <!-- mini rule for select button -->
@@ -92,12 +97,12 @@
                     <!-- type input -->
                     <div class="inputWrapper">
                         <div class="inputBox">
-                            <p class="typeHere">TYPE HERE</p>
+                            <p class="typeHere">TYPE HERE:</p>
+                            <p class="inputLabel">Enter a letter or word.</p>
                             <input type="text" name="" id="inputGuess">
                             <!-- GUESS BUTTON -->
                             <div class="guessBox">
                                 <button class="guessButton" onclick="guessWord()">CAST</button>
-                                <!-- <button class="guessButton" onclick="guessWord()">GUESS</button> -->
                             </div>
                         </div>
                     </div>

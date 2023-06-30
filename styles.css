@@ -38,7 +38,6 @@ body {
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: bottom;
-    background-attachment: fixed;
     width: 100%;
     height: 100%;
     padding: 30px;
@@ -157,61 +156,70 @@ body {
 
 /* Top Screen */
 .gameScreenTop {
-    border: solid lightblue;
+    /* border: solid lightblue; */
     width: 100%;
     height: 43%;
     font-family: 'Press Start 2P', cursive;
     display: none;
 }
 .word {
-    border: solid palevioletred;
+    /* border: solid palevioletred; */
     width: 100%;
     height: 60%;
     font-size: 23px;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-transform: uppercase;
 }
 .scoreBox {
-    border: solid orangered;
+    /* border: solid orangered; */
     width: 100%;
     height: 40%;
     display: flex;
+    flex-direction: row-reverse;
+
 }
 .currentStatus {
-    border: solid gold;
-    border-top-left-radius: 10%;
-    padding: 15px;
+    margin-right: 55.5px;
+    padding: 18px 15px 0 15px;
     font-size: 15px;
-    width: 70%;
-    color: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(103, 124, 135);
+    text-align: center;
+    width: 60%;
+    height: 100%;
+    color: #000000;
+    background-image: url(images/speechBub.png);
+    background-size: 100% 110px;
+    background-repeat: no-repeat;
 }
 #wizard {
-    border: solid red;
-    transform: scaleX(-1);
-    /* padding-top: 20px; */
-    /* width: 100px;
-    height: 120px; */
+    /* border: solid red; */
+    height: 150px;
+    z-index: 99;
+    position: absolute;
+    margin-top: 20px;
+    left: 40px;
 }
 
 
 /* Bottom Screen */
 .gameScreenBottom {
-    border: solid lavenderblush;
+    /* border: solid lavenderblush; */
     width: 100%;
     height: 50%;
     font-family: 'Press Start 2P', cursive;
 }
 .playBox {
-    width: 100%;
+    /* width: 100%; */
     height: auto;
     text-align: center;
     margin: 20px 0 10px 0;
     font-size: 25px;
+}
+.currentPlayer {
+    /* border: solid magenta; */
+    text-align: right;
+    margin-right: 40px;
 }
 .currentPlayer span{
     color: rgb(253, 219, 23);
@@ -244,7 +252,7 @@ body {
 
 /* input area */
 .inputWrapper {
-    border: solid bisque;
+    /* border: solid bisque; */
     width: 100%;
     height: 150px;
     display: flex;
@@ -253,7 +261,7 @@ body {
     margin: 40px 0 50px 0;
 }
 .inputBox {
-    border: solid rebeccapurple;
+    /* border: solid rebeccapurple; */
     height: 100%;
     text-align: center;
 }
@@ -313,7 +321,7 @@ text-shadow: 1px 1px 2px rgb(54, 105, 126); */
 }
 
 /* TO DO:
-    1. speech bubble
+    1. speech 
     2. title
     3. swap player pics?
     4. style input - border?

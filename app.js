@@ -156,9 +156,14 @@ const letterFound = (letter, index) => {
 
             let winScreen = document.querySelector('.winScreen')
 
-            gameScreenBody.style.display = "none"
+            setTimeout(()=>{
+                gameScreenBody.style.display = "none"
             winScreen.classList.toggle('appear')
             console.log('did it?');
+            }, 2000);
+            // gameScreenBody.style.display = "none"
+            // winScreen.classList.toggle('appear')
+            // console.log('did it?');
             // delayReload(5000);
 
             // TO DO win screen:

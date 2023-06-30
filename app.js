@@ -1,24 +1,22 @@
-/******************************************** DOM */
+/******************************************** DOM - main gameplay */
 let guessButton = document.querySelector('.guessButton');
 let input = document.querySelector('input');
 let playerNumber = document.querySelector('.currentPlayer span');
 let currentStatus = document.querySelector('.currentStatus');
 let spellCast = document.querySelector('.word')
-
 let rulesScreen = document.querySelector('.rulesScreen')
 let winScreen = document.querySelector('.winScreen')
 let gameScreenBody = document.querySelector('.gameScreenBody')
 let gameScreenTop = document.querySelector('.gameScreenTop')
 let player = document.querySelector('.victoryPlayer span')
 
-let wrongGuess = document.querySelector('.wrongGuess span')
-
+// let wrongGuess = document.querySelector('.wrongGuess span')
 
 /******************************************** VARIABLES */
 let words = []; // store words entered here (words to guess)
 let wordSpell = []; // show words as clues
 let currentPlayer = 1; // initial player one
-let standing = false; //status at start
+let standing = false; //status at start phase 1 /phase 2
 
 
 // start game
@@ -26,25 +24,6 @@ const startGame = () => {
     rulesScreen.classList.add('hide');
     gameScreenBody.style.display = "block"
     gameScreenTop.classList.add('appear');
-}
-
-let inputWrapper = document.querySelector('.inputWrapper');
-    let rulesRecap = document.querySelector('.rulesRecap');
-    let selectBtn = document.querySelector('.selectBtn');
-    let selectBtn2 = document.querySelector('.selectBtn2');
-
-// select button
-const ruleNotif = () => {
-    inputWrapper.style.display = "none"
-    rulesRecap.style.display = "block"
-    selectBtn.style.display = "none"
-    selectBtn2.style.display = "block"
-}
-const ruleOut = () => {
-    rulesRecap.style.display = "none"
-    selectBtn2.style.display = "none"
-    selectBtn.style.display = "block"
-    inputWrapper.style.display = "block"
 }
 
 /******************************************************* GAME FUNCTIONALITY */
@@ -103,11 +82,8 @@ const guessWord = () => {
             spellCast.textContent = spell // full word correctly guessed on screen
             console.log("complete word shows up on screen")
         }
-
-
     }
 }
-
 
 // swap players
 const playerSwitch = () => {
@@ -125,8 +101,6 @@ const playerSwitch = () => {
     input.value = "";
 
     // wrongGuess.textContent = ""
-
-
 }
 
 // make spell casted (word) display as clues on screen
@@ -210,3 +184,38 @@ const keyDown = (e) => {
 }
 
 input.addEventListener('input', keyDown)
+
+/******************************************************************8*** DOM SYLING - variables */
+let inputWrapper = document.querySelector('.inputWrapper');
+let rulesRecap = document.querySelector('.rulesRecap');
+let speechBubble = document.querySelector('.currentStatus')
+let wizard = document.querySelector('#wizard')
+let scoreBox = document.querySelector('.scoreBox')
+let inputBox = document.querySelector('.inputBox')
+let selectBtn = document.querySelector('.selectBtn');
+let selectBtn2 = document.querySelector('.selectBtn2');
+let buttons = document.querySelector('.buttons')
+
+/*********************************************************************** DOM STYLING */
+// select button
+const ruleNotif = () => {
+    inputWrapper.style.display = "none"
+    wizard.style.display = "none"
+    scoreBox.style.height = "0px"
+    speechBubble.style.display = "none"
+    rulesRecap.style.display = "block"
+    selectBtn.style.display = "none"
+    selectBtn2.style.display = "block"
+    buttons.style.marginTop = "93px"
+}
+const ruleOut = () => {
+    rulesRecap.style.display = "none"
+    selectBtn2.style.display = "none"
+    selectBtn.style.display = "block"
+    speechBubble.style.display = "block"
+    scoreBox.style.height = "43%"
+    wizard.style.display = "block"
+    inputWrapper.style.display = "block"
+    buttons.style.marginTop = "-3px"
+    inputBox.style.marginTop = "5px"
+}

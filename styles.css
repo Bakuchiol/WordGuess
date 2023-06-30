@@ -239,7 +239,7 @@ body {
 }
 .scoreBox {
     border: solid orangered;
-    width: 100%;
+    /* width: 100%; */
     height: 40%;
     display: flex;
     flex-direction: row-reverse;
@@ -345,7 +345,7 @@ body {
 
 /* input area */
 .inputWrapper {
-    /* border: solid bisque; */
+    border: solid bisque;
     width: 100%;
     height: 150px;
     display: flex;
@@ -353,7 +353,7 @@ body {
     align-items: center;
 }
 .inputBox {
-    /* border: solid rebeccapurple; */
+    border: solid rebeccapurple;
     margin-top: 15px;
     text-align: center;
 }

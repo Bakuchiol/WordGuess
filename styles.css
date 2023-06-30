@@ -19,13 +19,15 @@ body {
 
 /* device */
 .deviceBody {
-    /* border: solid burlywood; */
+    border: solid rgb(68, 170, 210);
     width: 100%;
     height: 90vh;
     padding: 8px;
+    border-radius: 5px;
 }
 .screenWrapper {
     /* border: solid salmon; */
+    border-radius: 5px;
     background-image: url(images/turqouiseSky.gif);
     background-size: cover;
     width: 100%;
@@ -50,6 +52,7 @@ body {
     z-index: -1;
 }
 .rulesScreen {
+    border-radius: 5px;
     background-color: rgb(68, 170, 210);
     background-image: url(images/spiritedAway.jpeg);
     background-size: 100%;
@@ -114,16 +117,20 @@ body {
     display: none;
 }
 .gameTitleBox{
-    border: solid saddlebrown;
+    /* border: solid saddlebrown; */
+    /* background-image: url(images/ribbon.png); */
+    /* background-size: 300px;
+    background-position: center -29px;
+    background-repeat: no-repeat; */
     text-align: center;
     width: 100%;
-    height: 50px;
+    height: 60px;
     padding-top: 10px;
 }
 .gameTitleBox > h1 {
     font-family: 'Astloch', cursive;
-    font-size: 40px;
-    /* color: rgb(253, 219, 23); */
+    font-size: 50px;
+    color: rgb(253, 219, 23);
     text-shadow: 1px 1px 2px rgb(191, 168, 38);
 }
 
@@ -329,6 +336,9 @@ body {
     font-size: 50px;
     text-align: center;
     text-transform: capitalize;
+    border: 2px solid rgb(26, 65, 101);
+    border-radius: 5px;
+    background:cornsilk;
 }
 .guessButton {
     width: 120px;
@@ -344,7 +354,7 @@ body {
     /* border: solid greenyellow; */
     display: flex;
     justify-content: space-evenly;
-    margin-top: 25px;
+    margin-top: 45px;
 }
 .buttons > button {
     width: 100px;
@@ -375,8 +385,8 @@ text-shadow: 1px 1px 2px rgb(54, 105, 126); */
 /* TO DO:
     2. title
     4. style input - border?
-    8. border screen
-    9. border phone body
     10. button bg colors
     11. font colors - too jarring
+    12. mini rules too big - use reg font
+    13. rules page font
  */

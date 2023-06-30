@@ -61,7 +61,9 @@ const guessWord = () => {
             spell += `_`;
         }
         wordSpell.unshift(spell);
-        console.log(spell)
+
+        console.log(words)
+        console.log(`words now show as blanks: ${spell}`)
 
 
         playerSwitch();
@@ -80,7 +82,8 @@ const guessWord = () => {
         let index = spell.indexOf(letter) // finds letter and stores inside variable index
         //if letter not found
         if(index !== -1){
-            letterFound(letter, index)
+            letterFound(letter, index);
+            console.log("correct letter: ",letter)
 
         }else{
 
@@ -90,13 +93,15 @@ const guessWord = () => {
 
             playerSwitch()
             console.log('switched player wrong letter')
+            console.log(`wrong letter: ${letter}`)
         }
         wordClue()
-        console.log("shows up every correct guess")
+        // console.log("shows up every correct guess")
+        // console.log(`correct letter: ${letter}`)
 
         if(letter === spell){
             spellCast.textContent = spell // full word correctly guessed on screen
-            console.log("wiin?")
+            console.log("complete word shows up on screen")
         }
 
 
@@ -109,6 +114,7 @@ const playerSwitch = () => {
     if(currentPlayer === 1){
         currentPlayer = 2;
         player.textContent = "2" // win screen
+        // better luck next time, player x
     }else{
         currentPlayer = 1; // goes back to player1
         player.textContent = "1" // win screen
@@ -135,8 +141,7 @@ const wordClue = () => {
     guessButton.textContent = "GUESS"
 
     spellCast.textContent = spell;
-    console.log("shows up every key")
-    console.log(spell)
+    console.log(`opponent word on screen: ${spell}`)
 
 }
 
@@ -157,10 +162,11 @@ const letterFound = (letter, index) => {
         wordSpell[currentPlayer - 1] = spell;
         // replace _ with found letter
         words[currentPlayer - 1] = word.replace(letter, '_');
-        console.log(words[currentPlayer - 1], "down every correct guess")
+        console.log(`takes out correct letter from spell: ${word.replace(letter, '_')}, this: ${letter}`)
+        console.log(words[currentPlayer - 1], "rest of the letters to guess")
         // if index -1, letter no longer found (avoid repetition of entering same letter)
         index = words[currentPlayer - 1].indexOf(letter);
-        console.log(wordSpell[currentPlayer - 1])
+        console.log("correct letter on screen", wordSpell[currentPlayer - 1])
 
 
         // if win
@@ -189,3 +195,18 @@ const reloadPage = () => {
 const delayReload = (time) => {
     window.setTimeout(reloadPage, time)
 }
+
+/* listen to keydown */
+// only listening to one key
+const keyDown = (e) => {
+    let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    let master = alphabet.split('')
+    let key = e.target.value.toUpperCase();
+
+    // check keys
+    if(master.includes(key)){
+        console.log(`letter pressed: ${key}`)
+    }
+}
+
+input.addEventListener('input', keyDown)

@@ -24,17 +24,16 @@
                     </div>
                         <h1 class="rulesTitle">Word Duel</h1>
                     <div class="rules">
-                        <p class="playRules playDesc">Wizards are just like us, they can end up fumbling a word or two, and with magic, that's pretty bad! So what's a spell caster to do?</p>
+                        <p class="playDesc">Wizards are just like us, they can end up fumbling a word or two, and with magic, that's pretty bad! So what's a spell caster to do?</p>
                         <p class="playRules">
                             <ol class="playRulesList">
                                 <li>Both duelists think of a <span>word for the other to guess.</span></li>
-                                <li>A player can guess a <span> or word.</span></li>
+                                <li>A player can guess a <span>letter or word.</span></li>
                                 <li>If guess is <span>wrong</span>, <span>switch players</span>.</li>
-                                <li>Whoever guesses their opponent's words first <span>wins</span>!</li>
+                                <li>Whoever guesses their opponent's word first <span>wins</span>!</li>
                             </ol>
-                            <br>
-                            So, are you ready for a <span>word duel</span>?!
                         </p>
+                        <p class="playReady">So, are you ready for a <span>word duel</span> ?</p>
                         <!-- button play -->
                         <div class="playButton">
                             <button class="startPlayButton" onclick="startGame()">PLAY</button>
@@ -69,21 +68,24 @@
                 <div class="gameScreenTop">
                     <div class="wordContainer">
                         <h1 class="word">Cast your Spells!</h1>
+                        <div class="cover"></div>
                     </div>
-                    <!-- score box -->
-                    <div class="scoreBox">
-                        <p class="currentStatus">Each player must enter a word.</p>
-                        <img src="images/waitingWizard.gif" alt="" id="wizard">
-                    </div>
-                </div>
-                <!-- bottom screen -  -->
-                <div class="gameScreenBottom">
-
                     <!--  player box -->
                     <div class="playBox">
                         <p class="currentPlayer">Player <span>1</span></p>
                         <!-- <p class="wrongGuess">Wrong Guess: <span></span></p> -->
                     </div>
+                </div>
+
+                <!-- bottom screen -  -->
+                <div class="gameScreenBottom">
+
+                    <!-- score box -->
+                    <div class="scoreBox">
+                        <p class="currentStatus">Each player must enter a word.</p>
+                        <img src="images/waitingWizard.gif" alt="" id="wizard">
+                    </div>
+                    
 
                     <!-- mini rule for select button -->
                     <div class="rulesRecap">
@@ -99,8 +101,9 @@
 
                     <!-- type input -->
                     <div class="inputWrapper">
+                        <img src="images/Shield_mage.webp" alt="" id="wizard2">
                         <div class="inputBox">
-                            <p class="typeHere">TYPE HERE:</p>
+                            <!-- <p class="typeHere">TYPE HERE:</p> -->
                             <p class="inputLabel">Enter a letter or word.</p>
                             <input type="text" name="" id="inputGuess">
                             <!-- GUESS BUTTON -->

@@ -1,7 +1,8 @@
 /* GOOGLE FONTS */
-  @import url('https://fonts.googleapis.com/css2?family=Astloch:wght@400;700&family=Press+Start+2P&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Lancelot&family=Poor+Story&family=Press+Start+2P&display=swap');
 /* font-family: 'Press Start 2P', cursive; */
-/* font-family: 'Astloch', cursive; */
+/* font-family: 'Poor Story', cursive; */
+/* font-family: 'Lancelot', cursive; */
 
 
 * {
@@ -74,23 +75,44 @@ body {
     text-align: center;
 }
 .rulesTitle {
-    font-family: 'Astloch', cursive;
+    font-family: 'Lancelot', cursive;
     color: rgb(253, 219, 23);
-    text-shadow: 1px 1px 2px rgb(191, 168, 38);
-    font-size: 50px;
+    text-shadow: 1px 1px 5px rgb(79, 69, 13);
+    font-size: 60px;
 }
 .rules > * {
     margin-block-start: 10px;
     line-height: 1.5em;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Poor Story', cursive;
 }
-.playRules {
-    font-size: 10px;
-    text-shadow: 2px 2.5px 5px rgb(103, 124, 135);
+.playReady {
+    font-family: 'Lancelot', cursive;
+    font-size: 25px;
+    text-shadow: 2px 2.5px 5px rgb(11, 43, 60);
+    margin-top: 20px;
+}
+.playReady > span {
+    color: rgb(253, 219, 23);
+    text-shadow: 1px 1px 3px rgb(11, 12, 60);
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 30px;
+}
+.playRulesList {
+    /* border: solid brown; */
+    width: 420px;
+    margin-top: 25px;
+    margin-left: -6px;
+    text-align: left;
+    list-style-position: inside;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px rgb(11, 43, 60);
 }
 .playDesc {
+    font-family: 'Lancelot', cursive;
     font-style: italic;
-    font-size: 8px;
+    font-size: 20px;
     text-align: center;
     text-shadow: 2px 2.5px 5px rgb(61, 73, 79);
 }
@@ -100,12 +122,11 @@ body {
     font-family: 'Press Start 2P', cursive;
     font-size: 20px;
     color: rgb(253, 219, 23);
-    text-shadow: 1px 1px 2px rgb(26, 65, 101);
+    text-shadow: 1px 1px 2px rgb(18, 22, 87);
     border: none;
     border-radius: 7px;
     box-shadow: 1.5px 1.5px 5px rgb(61, 73, 79);
 }
-
 /* RULES SCREEN */
 
 /* MAIN GAME SCREEN */
@@ -180,22 +201,22 @@ body {
 
 /* Top Screen */
 .gameScreenTop {
-    /* border: solid lightblue; */
+    border: solid lightblue;
     width: 100%;
-    height: 43%;
+    height: 300px;
     font-family: 'Press Start 2P', cursive;
     display: none;
 }
 /* word container */
 .wordContainer{
     /* border: solid plum; */
-    background-color: rgb(103, 124, 135);
+    /* background-color: rgb(113, 133, 140); */
     background-image: url(images/border.png);
     background-repeat: no-repeat;
     background-size: contain;
     height: 70%;
-    width: 98%;
-    margin: 10px 0 10px 4px;
+    width: 99%;
+    margin: 10px 0 0 4px;
     padding: 50px 20px 0 20px;
 }
 .word {
@@ -208,13 +229,21 @@ body {
     align-items: center;
     text-transform: uppercase;
 }
+.cover {
+    /* border: solid lightpink; */
+    width: 50%;
+    height: 30px;
+    background-color: rgb(107, 129, 136);
+    position: absolute;
+    margin-left: 20px;
+}
 .scoreBox {
-    /* border: solid orangered; */
+    border: solid orangered;
     width: 100%;
     height: 40%;
     display: flex;
     flex-direction: row-reverse;
-
+    margin-top: -30px;
 }
 .currentStatus {
     margin-right: 55.5px;
@@ -236,7 +265,15 @@ body {
     margin-top: 20px;
     left: 40px;
 }
-
+#wizard2 {
+    /* border: solid fuchsia; */
+    height: 150px;
+    width: auto;
+    z-index: 99;
+    position: absolute;
+    right: 25px;
+    bottom: 132px;
+}
 
 /* Bottom Screen */
 .gameScreenBottom {
@@ -250,11 +287,11 @@ body {
     width: 58%;
     height: 50px;
     text-align: center;
-    margin: 30px 0 10px 0;
-    padding-top: 12px;
-    float: right;
+    margin: -5px 0 0 100px;
+    padding-top: 10px;
+    /* float: right; */
     background-color: rgb(46, 89, 107);
-    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
 }
 .currentPlayer {
@@ -284,7 +321,7 @@ body {
 /* mini Rules recap box */
 .rulesRecap {
     /* border: solid lawngreen; */
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Poor Story', cursive;
     width: 100%;
     height: 150px;
     font-size: 12px;
@@ -354,7 +391,7 @@ body {
     /* border: solid greenyellow; */
     display: flex;
     justify-content: space-evenly;
-    margin-top: 45px;
+    margin-top: 7px;
 }
 .buttons > button {
     width: 100px;

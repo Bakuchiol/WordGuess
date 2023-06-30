@@ -6,6 +6,7 @@ let currentStatus = document.querySelector('.currentStatus');
 let spellCast = document.querySelector('.word')
 
 let rulesScreen = document.querySelector('.rulesScreen')
+let winScreen = document.querySelector('.winScreen')
 let gameScreenBody = document.querySelector('.gameScreenBody')
 let gameScreenTop = document.querySelector('.gameScreenTop')
 let player = document.querySelector('.victoryPlayer span')
@@ -15,6 +16,7 @@ let player = document.querySelector('.victoryPlayer span')
 let words = []; // store words entered here (words to guess)
 let wordSpell = []; // show words as clues
 let currentPlayer = 1; // initial player one
+let playerTurn = currentPlayer - 1;
 let standing = false; //status at start
 
 
@@ -60,6 +62,7 @@ const guessWord = () => {
         wordSpell.unshift(spell);
         console.log(spell)
 
+
         playerSwitch();
         // tell if second player turn
         if(words.length === 2){
@@ -71,7 +74,7 @@ const guessWord = () => {
         //make sure wordClue is executed PROGRAM STATUS2
         // check if letter found in spell(word)
         let letter = input.value.toLowerCase() // letter/word player guessed
-        let spell = words[currentPlayer - 1]// spell(word) player entered
+        let spell = words[playerTurn]// spell(word) player entered
         //checks word if letter is there
         let index = spell.indexOf(letter) // finds letter and stores inside variable index
         //if letter not found
@@ -83,6 +86,12 @@ const guessWord = () => {
         }
         wordClue()
         console.log("shows up every correct guess")
+
+        if(letter === spell){
+            spellCast.textContent = spell
+            console.log("wiin?")
+        }
+
     }
 }
 
@@ -107,7 +116,7 @@ const playerSwitch = () => {
 // make spell casted (word) display as clues on screen
 // corresponding with word length
 const wordClue = () => {
-    let spellClue = wordSpell[currentPlayer - 1]; // current player (1)
+    let spellClue = wordSpell[playerTurn]; // current player (1)
     let spell = "";
     for(let i = 0; i < spellClue.length; i++){
         spell += `${spellClue[i]} `
@@ -124,8 +133,8 @@ const wordClue = () => {
 // function to check if letter is found in word
 const letterFound = (letter, index) => {
     do {
-        let word = words[currentPlayer - 1];
-        let spellCast = wordSpell[currentPlayer - 1];
+        let word = words[playerTurn];
+        let spellCast = wordSpell[playerTurn];
 
         let spell = "";
         for(let i = 0; i < word.length; i++){
@@ -135,18 +144,18 @@ const letterFound = (letter, index) => {
                 spell += word[i]; // replaces underscore with letter at that position
             }
         }
-        wordSpell[currentPlayer - 1] = spell;
+        wordSpell[playerTurn] = spell;
         // replace _ with found letter
-        words[currentPlayer - 1] = word.replace(letter, '_');
-        console.log(words[currentPlayer - 1], "down every correct guess")
+        words[playerTurn] = word.replace(letter, '_');
+        console.log(words[playerTurn], "down every correct guess")
         // if index -1, letter no longer found (avoid repetition of entering same letter)
-        index = words[currentPlayer - 1].indexOf(letter);
-        console.log(wordSpell[currentPlayer - 1])
+        index = words[playerTurn].indexOf(letter);
+        console.log(wordSpell[playerTurn])
 
 
         // if win
         let checker = true;
-        let sample = words[currentPlayer - 1].split('');
+        let sample = words[playerTurn].split('');
         sample.forEach(bet => {
             if (bet != '_') {
                 checker = false;
@@ -154,20 +163,12 @@ const letterFound = (letter, index) => {
         });
         if (checker == true) {
 
-            let winScreen = document.querySelector('.winScreen')
-
             setTimeout(()=>{
                 gameScreenBody.style.display = "none"
-            winScreen.classList.toggle('appear')
-            console.log('did it?');
+                winScreen.classList.toggle('appear')
+                console.log('did it?');
             }, 2000);
-            // gameScreenBody.style.display = "none"
-            // winScreen.classList.toggle('appear')
-            // console.log('did it?');
-            // delayReload(5000);
 
-            // TO DO win screen:
-            // add button PLAY AGAIN take out all buttons (select and start)
         }
 
     } while(index !== -1) //get out of loop

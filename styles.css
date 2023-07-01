@@ -4,7 +4,7 @@
 /* font-family: 'Poor Story', cursive; */
 /* font-family: 'Lancelot', cursive; */
 
-
+/* size 552x796px */
 * {
     margin: 0;
     padding: 0;
@@ -38,11 +38,11 @@ body {
 .sparkles{
     height: 70px;
     width: auto;
-    margin-right: 80px;
     margin-left: 30px;
 }
 .rightSparkle {
     transform: rotate(90deg);
+    margin-left: 155px;
 }
 .sparkle1 {
     /* border: solid seagreen; */
@@ -51,6 +51,7 @@ body {
     display: flex;
     position: absolute;
     z-index: -1;
+
 }
 .rulesScreen {
     border-radius: 5px;
@@ -109,12 +110,15 @@ body {
     font-weight: bold;
     text-shadow: 1px 1px 5px rgb(11, 43, 60);
 }
+.playRulesList > li > span {
+    text-shadow: 1px 1px 5px rgb(7, 219, 106);
+}
 .playDesc {
     font-family: 'Lancelot', cursive;
     font-style: italic;
     font-size: 20px;
     text-align: center;
-    text-shadow: 2px 2.5px 5px rgb(61, 73, 79);
+    text-shadow: 2px 2.5px 5px rgb(49, 60, 65);
 }
 .startPlayButton{
     width: 120px;
@@ -122,10 +126,11 @@ body {
     font-family: 'Press Start 2P', cursive;
     font-size: 20px;
     color: rgb(253, 219, 23);
-    text-shadow: 1px 1px 2px rgb(18, 22, 87);
+    text-shadow: 1px 1.5px 4px rgb(7, 35, 219);
     border: none;
     border-radius: 7px;
     box-shadow: 1.5px 1.5px 5px rgb(61, 73, 79);
+    margin-top: 15px;
 }
 /* RULES SCREEN */
 
@@ -139,20 +144,16 @@ body {
 }
 .gameTitleBox{
     /* border: solid saddlebrown; */
-    /* background-image: url(images/ribbon.png); */
-    /* background-size: 300px;
-    background-position: center -29px;
-    background-repeat: no-repeat; */
     text-align: center;
     width: 100%;
     height: 60px;
     padding-top: 10px;
 }
 .gameTitleBox > h1 {
-    font-family: 'Astloch', cursive;
-    font-size: 50px;
+    font-family: 'Lancelot', cursive;
+    font-size: 60px;
     color: rgb(253, 219, 23);
-    text-shadow: 1px 1px 2px rgb(191, 168, 38);
+    text-shadow: 1px 2px 9px rgb(11, 43, 60);
 }
 
 /* WIN SCREEN */
@@ -201,7 +202,7 @@ body {
 
 /* Top Screen */
 .gameScreenTop {
-    border: solid lightblue;
+    /* border: solid lightblue; */
     width: 100%;
     height: 300px;
     font-family: 'Press Start 2P', cursive;
@@ -232,13 +233,13 @@ body {
 .cover {
     /* border: solid lightpink; */
     width: 50%;
-    height: 30px;
+    height: 32px;
     background-color: rgb(107, 129, 136);
     position: absolute;
-    margin-left: 20px;
+    margin: -2px 0 0 20px;
 }
 .scoreBox {
-    border: solid orangered;
+    /* border: solid orangered; */
     /* width: 100%; */
     height: 40%;
     display: flex;
@@ -271,8 +272,8 @@ body {
     width: auto;
     z-index: 99;
     position: absolute;
-    right: 25px;
-    bottom: 132px;
+    right: 30px;
+    bottom: 200px;
 }
 
 /* Bottom Screen */
@@ -320,16 +321,17 @@ body {
 
 /* mini Rules recap box */
 .rulesRecap {
-    /* border: solid lawngreen; */
+    border: solid lawngreen;
     font-family: 'Poor Story', cursive;
     width: 100%;
-    height: 150px;
+    height: auto;
     font-size: 12px;
     margin: 40px 0 50px 0;
     display: none;
 }
 .rulesRecapTitle {
-    font-size: 20px;
+    font-size: 30px;
+    font-weight: 700;
     text-align: center;
     padding-bottom: 15px;
     color:orange ;
@@ -337,15 +339,13 @@ body {
 .rulesRecap > ol {
     margin-left: 60px;
     line-height: 1.5em;
+    font-size: 20px;
     color: whitesmoke;
 }
 
-
-
-
 /* input area */
 .inputWrapper {
-    border: solid bisque;
+    /* border: solid bisque; */
     width: 100%;
     height: 150px;
     display: flex;
@@ -353,8 +353,8 @@ body {
     align-items: center;
 }
 .inputBox {
-    border: solid rebeccapurple;
-    margin-top: 15px;
+    /* border: solid rebeccapurple; */
+    margin-left: -10px;
     text-align: center;
 }
 .typeHere {
@@ -391,7 +391,7 @@ body {
     /* border: solid greenyellow; */
     display: flex;
     justify-content: space-evenly;
-    margin-top: 7px;
+    margin-top: 20px;
 }
 .buttons > button {
     width: 100px;
@@ -420,10 +420,6 @@ text-shadow: 1px 1px 2px rgb(54, 105, 126); */
 }
 
 /* TO DO:
-    2. title
-    4. style input - border?
     10. button bg colors
     11. font colors - too jarring
-    12. mini rules too big - use reg font
-    13. rules page font
  */

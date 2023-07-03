@@ -4,7 +4,7 @@
 /* font-family: 'Poor Story', cursive; */
 /* font-family: 'Lancelot', cursive; */
 
-/* size 552x796px */
+/* size 552x945px */
 * {
     margin: 0;
     padding: 0;
@@ -29,8 +29,12 @@ body {
 .screenWrapper {
     /* border: solid salmon; */
     border-radius: 5px;
-    background-image: url(images/turqouiseSky.gif);
-    background-size: cover;
+    /* background-image: url(images/turqouiseSky.gif); */
+    background-color: rgb(71, 172, 247);
+    background-image: url(images/castle.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
     width: 100%;
     height: 100%;
 }
@@ -51,18 +55,19 @@ body {
     display: flex;
     position: absolute;
     z-index: -1;
-
 }
 .rulesScreen {
     border-radius: 5px;
-    background-color: rgb(68, 170, 210);
-    background-image: url(images/spiritedAway.jpeg);
+    background-color: rgb(71, 172, 247);
+    background-image: url(images/castle.png);
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: bottom;
     width: 100%;
     height: 100%;
     padding: 30px;
+    color: #f5fff5;
+    font-weight: bold;
 }
 .rulesDesc{
     border-radius: 5px;
@@ -80,15 +85,16 @@ body {
     color: rgb(253, 219, 23);
     text-shadow: 1px 1px 5px rgb(79, 69, 13);
     font-size: 60px;
+    margin-top: 25px;
 }
 .rules > * {
-    margin-block-start: 10px;
+    margin-block-start: 15px;
     line-height: 1.5em;
     font-family: 'Poor Story', cursive;
 }
 .playReady {
     font-family: 'Lancelot', cursive;
-    font-size: 25px;
+    font-size: 30px;
     text-shadow: 2px 2.5px 5px rgb(11, 43, 60);
     margin-top: 20px;
 }
@@ -99,28 +105,14 @@ body {
     font-weight: bold;
     font-size: 30px;
 }
-.playRulesList {
-    /* border: solid brown; */
-    width: 420px;
-    margin-top: 25px;
-    margin-left: -6px;
-    text-align: left;
-    list-style-position: inside;
-    font-size: 20px;
-    font-weight: bold;
-    text-shadow: 1px 1px 5px rgb(11, 43, 60);
-}
-.playRulesList > li > span {
-    text-shadow: 1px 1px 5px rgb(7, 219, 106);
-}
 .playDesc {
     font-family: 'Lancelot', cursive;
     font-style: italic;
-    font-size: 20px;
-    text-align: center;
-    text-shadow: 2px 2.5px 5px rgb(49, 60, 65);
+    font-size: 25px;
+    text-align: left;
+    text-shadow: 2px 2.5px 5px rgb(27, 30, 32);
 }
-.startPlayButton{
+.startPlayButton {
     width: 120px;
     height: 40px;
     font-family: 'Press Start 2P', cursive;
@@ -146,8 +138,8 @@ body {
     /* border: solid saddlebrown; */
     text-align: center;
     width: 100%;
-    height: 60px;
-    padding-top: 10px;
+    height: 85px;
+    padding-top: 20px;
 }
 .gameTitleBox > h1 {
     font-family: 'Lancelot', cursive;
@@ -175,7 +167,7 @@ body {
     /* border: solid khaki; */
     font-family: 'Press Start 2P', cursive;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 70px;
 }
 #dancingWizard {
     height: 300px;
@@ -185,14 +177,16 @@ body {
 .victoryMsg{
     text-align: center;
     font-family: 'Press Start 2P', cursive;
+    font-size: 18px;
 }
 .playAgainButton {
-    margin-top: 30px;
+    margin-top: 22px;
     width: 155px;
-    height: 60px;
+    height: 65px;
     font-family: 'Press Start 2P', cursive;
     font-size: 20px;
-    color: rgb(253, 219, 23);
+    line-height: 1.3em;
+    color: rgb(255, 217, 0);
     text-shadow: 1px 1px 2px rgb(26, 65, 101);
     border: none;
     border-radius: 7px;
@@ -230,30 +224,27 @@ body {
     align-items: center;
     text-transform: uppercase;
 }
-.cover {
-    /* border: solid lightpink; */
-    width: 50%;
-    height: 32px;
-    background-color: rgb(107, 129, 136);
-    position: absolute;
-    margin: -2px 0 0 20px;
-}
 .scoreBox {
     /* border: solid orangered; */
     /* width: 100%; */
     height: 40%;
     display: flex;
     flex-direction: row-reverse;
-    margin-top: -30px;
+    margin-top: 10px;
+}
+.statusP{
+    /* border: solid hotpink; */
+    margin-top: -5px;
+    width: 75%;
+    font-size: 15px;
+    color: #000000;
+    position: absolute;
+    line-height: 1.4em;
 }
 .currentStatus {
-    margin-right: 55.5px;
-    padding: 18px 15px 0 15px;
-    font-size: 15px;
-    text-align: center;
+    margin-right: 65px;
     width: 60%;
     height: 100%;
-    color: #000000;
     background-image: url(images/speechBub.png);
     background-size: 100% 110px;
     background-repeat: no-repeat;
@@ -264,7 +255,7 @@ body {
     z-index: 99;
     position: absolute;
     margin-top: 20px;
-    left: 40px;
+    left: 33px;
 }
 #wizard2 {
     /* border: solid fuchsia; */
@@ -272,8 +263,11 @@ body {
     width: auto;
     z-index: 99;
     position: absolute;
-    right: 30px;
-    bottom: 200px;
+    right: 35px;
+    bottom: 290px;
+}
+.wizardShadow {
+    filter: drop-shadow(0 0 0.75rem #dc143c);
 }
 
 /* Bottom Screen */
@@ -285,22 +279,24 @@ body {
 }
 .playBox {
     /* border: solid magenta; */
-    width: 58%;
+    width: 90%;
     height: 50px;
     text-align: center;
-    margin: -5px 0 0 100px;
+    margin: -5px 0 0 25px;
     padding-top: 10px;
     /* float: right; */
-    background-color: rgb(46, 89, 107);
+    background-color: rgb(57, 138, 40);
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
+    box-shadow: 1px 1.5px 5px rgb(61, 73, 79);
+
 }
 .currentPlayer {
     font-size: 25px;
-    /* text-align: right; */
-    /* padding-top: 15px; */
-    padding-right: 10px;
-    color: rgb(253, 219, 23);
+    color: cornsilk;
+    text-shadow:2px 2.5px 2px rgb(34, 16, 21);
+    position: absolute;
+    margin: 25px 105px 0 0;
 }
 .currentPlayer span{
     text-decoration: underline;
@@ -321,26 +317,30 @@ body {
 
 /* mini Rules recap box */
 .rulesRecap {
-    border: solid lawngreen;
+    /* border: solid lawngreen; */
     font-family: 'Poor Story', cursive;
     width: 100%;
     height: auto;
     font-size: 12px;
     margin: 40px 0 50px 0;
+    padding: 5px;
     display: none;
+    box-shadow: inset 0 0 0 2000px rgba(255,255,255,0.3);
+    backdrop-filter: blur(100px);
 }
 .rulesRecapTitle {
-    font-size: 30px;
+    font-size: 35px;
     font-weight: 700;
     text-align: center;
     padding-bottom: 15px;
-    color:orange ;
+    color:rgb(32, 77, 22);
 }
 .rulesRecap > ol {
-    margin-left: 60px;
+    margin-left: 40px;
     line-height: 1.5em;
-    font-size: 20px;
-    color: whitesmoke;
+    font-size: 25px;
+    color: #000;
+    text-shadow: .1px .5px .5px rgb(57, 23, 39);
 }
 
 /* input area */
@@ -351,6 +351,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* margin-top: 20px; */
 }
 .inputBox {
     /* border: solid rebeccapurple; */
@@ -361,8 +362,15 @@ body {
     font-size: 15px;
 }
 .inputLabel{
-    font-size: 10px;
+    font-size: 12px;
     color: #000;
+    width: 100%;
+    box-shadow: inset 0 0 0 2000px rgba(255,255,255,0.3);
+    backdrop-filter: blur(100px);
+}
+.inputLabel2{
+    width: 60%;
+    margin-left: 90px;
 }
 .inputBox > * {
     margin-block-start: 7px;
@@ -392,6 +400,7 @@ body {
     display: flex;
     justify-content: space-evenly;
     margin-top: 20px;
+    position: static; /* ?keep */
 }
 .buttons > button {
     width: 100px;
@@ -406,6 +415,61 @@ body {
     display: none;
 }
 
+/* try again pop up */
+.popWrapper {
+    /* border: solid lightcoral; */
+    width: 400px;
+    height: 375px;
+    margin: -15px 0 0 35px;
+    border-radius: 10px;
+    font-family: 'Poor Story', cursive;
+    background-color: rgb(219, 219, 170);
+    box-shadow: 3px 5px 5px rgb(61, 73, 79);
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    position: absolute;
+    z-index: 99;
+    display: none;
+}
+.popUp {
+    /* border: solid rgb(134, 205, 90); */
+    width: 300px;
+    margin: 20px 0 0 50px;
+    height: 330px;
+    backdrop-filter: blur(1px);
+    color: rgb(11, 43, 60);
+    text-align: center;
+}
+.popUp > h1 {
+    font-size: 50px;
+}
+.popUp > p {
+    /* border: solid blue; */
+    margin: 15px 0 0 45px;
+    width: 200px;
+    font-size: 25px;
+    margin-block-start: 15px;
+}
+/* TIMER */
+.timeContainer {
+    /* border: solid darkmagenta; */
+    /* text-align: center; */
+    margin-top: 15px;
+}
+.countdown {
+    width: 60%;
+    margin-left: 70px;
+    color: #000;
+    font-size: 20px;
+    box-shadow: inset 0 0 0 2000px rgba(255,255,255,0.3);
+    border-radius: 10px;
+}
+.countdown > span {
+    color: crimson;
+    font-size: 22px;
+}
+
+
 
 /* source */
 /* color: rgb(103, 124, 135);
@@ -419,7 +483,8 @@ text-shadow: 1px 1px 2px rgb(54, 105, 126); */
     display: block;
 }
 
-/* TO DO:
-    10. button bg colors
-    11. font colors - too jarring
+/* 
+TO DO:
+1. FIX main page - wording/story
+2. add link to github
  */

@@ -1,6 +1,7 @@
 /******************************************** DOM - main gameplay */
 let guessButton = document.querySelector('.guessButton');
 let input = document.querySelector('input');
+let currentUser = document.querySelector('.currentPlayer')
 let playerNumber = document.querySelector('.currentPlayer span');
 let currentStatus = document.querySelector('.currentStatus');
 let spellCast = document.querySelector('.word')
@@ -9,6 +10,7 @@ let winScreen = document.querySelector('.winScreen')
 let gameScreenBody = document.querySelector('.gameScreenBody')
 let gameScreenTop = document.querySelector('.gameScreenTop')
 let player = document.querySelector('.victoryPlayer span')
+let numdown = document.querySelector('.countdown span') // number countdown
 
 // let wrongGuess = document.querySelector('.wrongGuess span')
 
@@ -17,6 +19,8 @@ let words = []; // store words entered here (words to guess)
 let wordSpell = []; // show words as clues
 let currentPlayer = 1; // initial player one
 let standing = false; //status at start phase 1 /phase 2
+let count = 60;
+let countdown;
 
 
 /******************************************************* GAME FUNCTIONALITY */
@@ -25,25 +29,39 @@ const startGame = () => {
     rulesScreen.classList.add('hide');
     gameScreenBody.style.display = "block"
     gameScreenTop.classList.add('appear');
-    timer();
 }
 
 /******************************* TESTING */
 // timer
-let count = 60;
-let countdown;
+let popUp = document.querySelector('.popWrapper')
 const timer = () => {
-    let timer = document.querySelector('.countdown span') //
     countdown = setInterval(()=> {
-        timer.style.color = "white"
-        timer.textContent = count
-        count--
+        // numdown.style.color = "crimson"
+        numdown.textContent = count
+        count--;
+        if (count === -1){ // show zero on screen
+            clearInterval(countdown);
+            popUp.style.display = "block"
+            wizard.classList.add('wizardShadow')
+            wizard2.classList.add('wizardShadow')
+            // pop up here w/ try again button (try to cast an easier spell)
+            console.log("try to cast an easier spell")
+        }
     }, 1000)
 };
 
 
 // try again?
-const
+/*  TO DO
+1. make lose modal
+2. try again button
+ */
+const tryAgain = () => {
+
+    rulesScreen.classList.add('hide');
+    gameScreenBody.style.display = "block"
+    gameScreenTop.classList.add('appear');
+}
 
 /******************************* TESTING */
 
@@ -60,7 +78,7 @@ const guessWord = () => {
         // words as spells hidden
         let spell = "";
         for(let i = 0; i < input.value.length; i++){
-            spell += `_`;
+            spell += `_`;            
         }
         wordSpell.unshift(spell);
 
@@ -72,8 +90,10 @@ const guessWord = () => {
 
         /**** 2nd phase */
         if(words.length === 2){ // two words in storage
+            timer();
 
-            currentStatus.textContent = `Guess your opponent's spell!`
+            let reminder = document.querySelector('.statusP')
+            reminder.textContent = `Guess your opponent's spell!`
             wordClue();
             standing = true; // players already playing game
         }
@@ -87,7 +107,7 @@ const guessWord = () => {
         //if letter not found
         if(index !== -1){
             letterFound(letter, index);
-            console.log("correct letter: ",letter)
+            // console.log("correct letter: ",letter)
 
         }else{
 
@@ -101,7 +121,7 @@ const guessWord = () => {
         }
         wordClue()
         // console.log("shows up every correct guess")
-        console.log(`correct letter: ${letter}`)
+        // console.log(`correct letter: ${letter}`)
 
         if(letter === spell){
             spellCast.textContent = spell // full word correctly guessed on screen
@@ -110,15 +130,26 @@ const guessWord = () => {
     }
 }
 
+let wizard2 = document.querySelector('#wizard2')
+
 // swap players
 const playerSwitch = () => {
     if(currentPlayer === 1){
         currentPlayer = 2;
         player.textContent = "2" // win screen
+
+        wizard2.classList.add('wizardShadow')
+        wizard.classList.remove('wizardShadow')
+        currentStatus.style.transform = "scaleX(-1)"
+
         // better luck next time, player x
     }else{
         currentPlayer = 1; // goes back to player1
         player.textContent = "1" // win screen
+
+        wizard.classList.add('wizardShadow')
+        wizard2.classList.remove('wizardShadow')
+        currentStatus.style.transform = "scaleX(1)"
     }
     // update player number
     playerNumber.textContent = currentPlayer;
@@ -138,8 +169,8 @@ const wordClue = () => {
     }
 
     guessButton.textContent = "GUESS"
-
     spellCast.textContent = spell;
+
     console.log(`opponent word on screen: ${spell}`)
 
 }
@@ -225,7 +256,8 @@ let inputBox = document.querySelector('.inputBox')
 let selectBtn = document.querySelector('.selectBtn');
 let selectBtn2 = document.querySelector('.selectBtn2');
 let buttons = document.querySelector('.buttons')
-
+let timeContainer = document.querySelector('.timeContainer')
+let inputLabel = document.querySelector('.inputLabel')
 /*********************************************************************** DOM STYLING */
 // select button
 const ruleNotif = () => {
@@ -233,16 +265,21 @@ const ruleNotif = () => {
     wizard.style.display = "none"
     scoreBox.style.height = "0px"
     speechBubble.style.display = "none"
+    timeContainer.style.display = "none"
+    currentUser.style.display = "none"
     rulesRecap.style.display = "block"
     selectBtn.style.display = "none"
     selectBtn2.style.display = "block"
-    buttons.style.marginTop = "93px"
+    buttons.style.marginTop = "77px"
 }
 const ruleOut = () => {
     rulesRecap.style.display = "none"
     selectBtn2.style.display = "none"
     selectBtn.style.display = "block"
     speechBubble.style.display = "block"
+    currentUser.style.display = "block"
+    timeContainer.style.display = "block"
+    inputLabel.classList.add('inputLabel2')
     scoreBox.style.height = "43%"
     wizard.style.display = "block"
     inputWrapper.style.display = "block"

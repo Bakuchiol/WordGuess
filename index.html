@@ -23,16 +23,16 @@
                     </div>
                         <h1 class="rulesTitle">Word Duel</h1>
                     <div class="rules">
-                        <p class="playDesc">Wizards are just like us, they can end up fumbling a word or two, and with magic, that's pretty bad! So what's a spell caster to do?</p>
-                        <p class="playRules">
-                            <ol class="playRulesList">
-                                <li>Both duelists think of a <span>word for the other to guess.</span></li>
-                                <li>A player can guess a <span>letter or word.</span></li>
-                                <li>If guess is <span>wrong</span>, <span>switch players</span>.</li>
-                                <li>Whoever guesses their opponent's word first <span>wins</span>!</li>
-                            </ol>
+                        <p class="playDesc">
+                            &emsp; Wizards are just like us, they can end up fumbling a word or two, and with magic, that's pretty bad!
+                            <br>
+                            So what's a spell caster to do?
+                            <br>
+                            In their free time, wizards challenge each other to a friendly game of word duels!
+                            <br>
+                            Whoever guesses their opponent's spell first wins!                    
                         </p>
-                        <p class="playReady">So, are you ready for a <span>word duel</span> ?</p>
+                        <p class="playReady">Are you ready for a <span>word duel</span> ?</p>
                         <!-- button play -->
                         <div class="playButton">
                             <button class="startPlayButton" onclick="startGame()">PLAY</button>
@@ -62,12 +62,6 @@
                 <div class="gameTitleBox">
                     <h1>Word Duel</h1>
                 </div>
-                <!-- ************* TESTING ************ -->
-                <div class="timeContainer">
-                    <p class="countdown">Time left: <span></span></p>
-                </div>
-
-                <!-- ************* TESTING ************ -->
 
                 <!-- top screen - title word -->
                 <div class="gameScreenTop">
@@ -77,17 +71,32 @@
                     </div>
                     <!--  player box -->
                     <div class="playBox">
-                        <p class="currentPlayer">Player <span>1</span></p>
+                        <p class="statusP">Each player must enter a word.</p>
+
                         <!-- <p class="wrongGuess">Wrong Guess: <span></span></p> -->
                     </div>
                 </div>
+
+
+                <!-- ************* TESTING ************ -->
+                <div class="popWrapper">
+                    <div class="popUp">
+                        <h1>TRY AGAIN?</h1>
+                        <p>Both players failed to guess each other's spell.</p>
+                        <p>Try casting an easier spell this time!</p>
+                        <p>Press the start button to play again!</p>
+                    </div>
+                </div>
+                <!-- ************* TESTING ************ -->
+
 
                 <!-- bottom screen -  -->
                 <div class="gameScreenBottom">
 
                     <!-- score box -->
                     <div class="scoreBox">
-                        <p class="currentStatus">Each player must enter a word.</p>
+                        <p class="currentPlayer">Player <span>1</span></p>
+                        <div class="currentStatus"></div>
                         <img src="images/waitingWizard.gif" alt="" id="wizard">
                     </div>
                     
@@ -99,9 +108,18 @@
                             <li>Each player enters their word.</li>
                             <li>A player can guess a letter or word.</li>
                             <li>If guess is wrong, switch players.</li>
-                            <li>Whoever guesses their opponent's word first wins!.</li>
+                            <li>Whoever guesses their opponent's word in 60 seconds first wins!.</li>
                         </ol>
                     </div>
+
+
+                    <!-- ************* TESTING ************ -->
+                <div class="timeContainer">
+                    <p class="countdown">Time left: <span>60</span></p>
+                </div>
+
+                <!-- ************* TESTING ************ -->
+
 
 
                     <!-- type input -->
@@ -120,8 +138,8 @@
                     <!-- button box -->
                     <div class="buttons">
                         <!-- select - displays rules -->
-                        <button class="selectBtn2" onclick="ruleOut()">SELECT</button>
-                        <button class="selectBtn" onclick="ruleNotif()">SELECT</button>
+                        <button class="selectBtn2" onclick="ruleOut()">RULES</button>
+                        <button class="selectBtn" onclick="ruleNotif()">RULES</button>
                         <!-- start - restarts game -->
                         <button class="start" onclick="reloadPage()">START</button>
                     </div>
@@ -134,9 +152,6 @@
     </div>
 
     
-
-
-
 
     <script src="/app.js"></script>
 </body>

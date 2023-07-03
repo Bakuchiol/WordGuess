@@ -25,49 +25,41 @@ const startGame = () => {
     rulesScreen.classList.add('hide');
     gameScreenBody.style.display = "block"
     gameScreenTop.classList.add('appear');
+    timer();
 }
+
+/******************************* TESTING */
+// timer
+let count = 60;
+let countdown;
+const timer = () => {
+    let timer = document.querySelector('.countdown span') //
+    countdown = setInterval(()=> {
+        timer.style.color = "white"
+        timer.textContent = count
+        count--
+    }, 1000)
+};
+
+
+// try again?
+const
+
+/******************************* TESTING */
 
 
 // event listener for guess button
 const guessWord = () => {
     // console.log(input.value);
-
-    /******************************* TESTING */
-    let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    let master = alphabet.split('')
-    let numbers = '0123456789'
-    let numeral = numbers.split('')
-    let spelling = input.value
-    
-    // if(spelling == ""){
-    //     console.log("INPUT EMPTY")
-    //     spelling = ""
-    // }
-    // if(numeral.includes(spelling)){
-    //     console.log("NOT LETTER")
-    //     console.log("READ RULES AGAIN!")
-    //     // alert("READ THE RULES AGAIN!")
-    //     words = []
-    // }
-
-    /******************************* TESTING */
-
-
     // define game status/standing - players storing words
+    /**** 1st phase */
     if(standing === false){
         words.unshift(input.value.toLowerCase()); //stores input value
+        
+
         // words as spells hidden
         let spell = "";
         for(let i = 0; i < input.value.length; i++){
-
-            //test attempt
-            // if(spelling.includes(numeral) || spelling == ""){
-            //     console.log("empty or number")
-            // } else {
-            //     spell += `_`;
-            // }
-            //test attempt
-
             spell += `_`;
         }
         wordSpell.unshift(spell);
@@ -77,8 +69,10 @@ const guessWord = () => {
 
 
         playerSwitch();
-        // tell if second player turn
+
+        /**** 2nd phase */
         if(words.length === 2){ // two words in storage
+
             currentStatus.textContent = `Guess your opponent's spell!`
             wordClue();
             standing = true; // players already playing game
@@ -107,7 +101,7 @@ const guessWord = () => {
         }
         wordClue()
         // console.log("shows up every correct guess")
-        // console.log(`correct letter: ${letter}`)
+        console.log(`correct letter: ${letter}`)
 
         if(letter === spell){
             spellCast.textContent = spell // full word correctly guessed on screen
@@ -203,45 +197,11 @@ const delayReload = (time) => {
 
 
 /******************************************************************************** TESTING */
-/* listen to keydown */
-// only listening to one key
-const keyDown = (e) => { //
-    let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    let master = alphabet.split('')
-    let numbers = '0123456789'
-    let numeral = numbers.split('') // array of string numbers
-    // console.log(numeral)
-    let newNums = numeral.map(Number); // array of integer numbers
-    console.log(newNums)
+
+// TIMER
 
 
-    let key = e.target.value.toUpperCase();
 
-    let keys = key.split('')
-    console.log(keys)
-
-    let spelling = input.value
-    let castedSpell = spelling.split('')
-
-    // check keys
-    if(master.includes(key)){
-        console.log(`letter pressed: ${key}`)
-    }else if(numbers.includes(keys)){
-        console.log(`not valid ${keys}`)
-    }
-
-    if(!isNaN(keys)){
-        console.log("Number showed", keys)
-    }else if(keys == !isNaN(keys)){
-        console.log("????")
-    }
-
-    // new attempt
-    // if(keys)
-
-}
-
-input.addEventListener('input', keyDown)
 
 
 // if input is empty

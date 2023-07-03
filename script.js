@@ -91,3 +91,68 @@ const reloadPage = () => {
 const delayReload = (time) => {
     window.setTimeout(reloadPage, time)
 }
+
+/************************************************ TRIALS */
+/* listen to keydown */
+// only listening to one key
+// const keyDown = (e) => { //
+//     let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+//     let master = alphabet.split('')
+//     let numbers = '0123456789'
+//     let numeral = numbers.split('') // array of string numbers
+//     // console.log(numeral)
+//     let newNums = numeral.map(Number); // array of integer numbers
+//     console.log(newNums)
+
+
+//     let key = e.target.value.toUpperCase();
+
+//     let keys = key.split('')
+//     console.log(keys)
+
+//     let spelling = input.value
+//     let castedSpell = spelling.split('')
+
+//     // check keys
+//     if(master.includes(keys)){
+//         console.log(`letter pressed: ${keys}`)
+//     }else if(numbers.includes(keys)){
+//         console.log(`not valid ${keys}`)
+//     }
+
+
+// }
+
+// input.addEventListener('input', keyDown)
+
+
+
+// const isLetter = (spell) => {
+//     console.log("not a letter")
+//     return typeof spell === 'string' && !isNaN(spell)
+// }
+// input.addEventListener('input', isLetter)
+
+
+
+/******************************* TESTING */
+let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+let master = alphabet.split('')
+let numbers = '0123456789'
+let numeral = numbers.split('')
+let spelling = input.value
+let castedSpell = spelling.split('')
+
+// if(spelling == ""){
+//     console.log("INPUT EMPTY")
+//     spelling = ""
+// }
+// if(numeral.includes(castedSpell)){
+//     console.log("NOT LETTER")
+//     console.log("READ RULES AGAIN!")
+//     // alert("READ THE RULES AGAIN!")
+//     words.pop()
+// }
+
+
+/******************************* TESTING */

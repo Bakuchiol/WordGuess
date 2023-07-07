@@ -66,6 +66,11 @@
                 <!-- top screen - title word -->
                 <div class="gameScreenTop">
                     <div class="wordContainer">
+
+                        <!-- round time -->
+                        <p class="round"></p>
+                        <!-- round time -->
+
                         <h1 class="word">Cast your Spells!</h1>
                         <div class="cover"></div>
                     </div>
@@ -109,13 +114,14 @@
                             <li>A player can guess a letter or word.</li>
                             <li>If guess is wrong, switch players.</li>
                             <li>Whoever guesses their opponent's word in 60 seconds first wins!.</li>
+                            <li>HINT: guess a vowel first.</li>
                         </ol>
                     </div>
 
 
                     <!-- ************* TESTING ************ -->
                 <div class="timeContainer">
-                    <p class="countdown">Time left: <span>60</span></p>
+                    <p class="countdown">Time left: <span>15</span></p>
                 </div>
 
                 <!-- ************* TESTING ************ -->
@@ -128,7 +134,9 @@
                         <div class="inputBox">
                             <!-- <p class="typeHere">TYPE HERE:</p> -->
                             <p class="inputLabel">Enter a letter or word.</p>
-                            <input type="text" name="" id="inputGuess">
+                            <form class="form" action="submit">
+                                <input type="text" name="" id="inputGuess" required>
+                            </form>
                             <!-- GUESS BUTTON -->
                             <div class="guessBox">
                                 <button class="guessButton" onclick="guessWord()">CAST</button>
@@ -154,5 +162,6 @@
     
 
     <script src="/app.js"></script>
+    <!-- <script src="/script.js"></script> -->
 </body>
 </html>

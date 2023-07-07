@@ -64,25 +64,25 @@ const wordClue = () => {
 }
 
 // function to check if letter is found in word
-const letterFound = (letter, index) => {
-    do {
-        let word = words[currentPlayer - 1];
-        let spellCast = wordSpell[currentPlayer - 1];
+// const letterFound = (letter, index) => {
+//     do {
+//         let word = words[currentPlayer - 1];
+//         let spellCast = wordSpell[currentPlayer - 1];
 
-        let spell = "";
-        for(let i = 0; i < word.length; i++){
-            if(index !== i){
-                spell += spellCast[i] // letter that was there
-            }else{ // if letter/word input is same
-                spell += word[i]; // replaces underscore with letter at that position
-            }
-        }
-        wordSpell[currentPlayer - 1] = spell;
-        words[currentPlayer - 1] = word.replace(letter, '_');
-        index = words[currentPlayer - 1].indexOf(letter);
+//         let spell = "";
+//         for(let i = 0; i < word.length; i++){
+//             if(index !== i){
+//                 spell += spellCast[i] // letter that was there
+//             }else{ // if letter/word input is same
+//                 spell += word[i]; // replaces underscore with letter at that position
+//             }
+//         }
+//         wordSpell[currentPlayer - 1] = spell;
+//         words[currentPlayer - 1] = word.replace(letter, '_');
+//         index = words[currentPlayer - 1].indexOf(letter);
 
-    } while(index !== -1)
-}
+//     } while(index !== -1)
+// }
 
 // RESET/RELOAD
 const reloadPage = () => {
@@ -156,3 +156,168 @@ let castedSpell = spelling.split('')
 
 
 /******************************* TESTING */
+
+// let count = 60;
+// let countdown;
+
+// const timer = () => {
+//     countdown = setInterval(()=> {
+//         VARIABLE.textContent = count
+//         count--;
+//         if (count === -1){ // show zero on screen
+//             clearInterval(countdown);
+//         }
+//     }, 1000)
+// };
+
+/******************************* TESTING */
+
+let count = 10;
+let countdown;
+
+const timer = () => {
+    countdown = setInterval(()=> {
+        count--;
+        VARIABLE.textContent = count
+        if (count == 0){ // show zero on screen
+            clearInterval(countdown);
+            // code to display next question
+        }
+    }, 1000)
+};
+
+// initial setup
+const FUNCTION_NAME = () => {
+    // code that clears questions on screen
+    count = 10;
+    clearInterval(countdown)
+    // code that displays time on screen
+    // code that calls for next question
+}
+
+// @next question button
+/*
+code that displays next question
+count = 10
+clearInterval(countdown);
+code that displays time on screen
+*/
+
+/******* test */
+const tryAgain = () => {
+    console.log('why')
+    // startGame()
+    // words = [];
+    // wordSpell = [];
+    // words.length = 0;
+    // wordSpell.length = 0;
+    // words.splice(0, words.length)
+    // wordSpell.splice(0, wordSpell.length)
+    // rulesScreen.classList.add('hide');
+    // gameScreenBody.style.display = "block"
+    // gameScreenTop.classList.add('appear');
+    // let content = gameScreenBody.innerHTML
+    // gameScreenBody.innerHTML = content
+}
+
+// let wrongGuess = document.querySelector('.wrongGuess span')
+// if((index === -1)){
+    // wrongGuess.textContent = letter // shows wrong guess
+// }
+    // wrongGuess.textContent = ""
+
+/******************************************************************************** TESTING */
+
+// TIMER
+// main game timer
+let mainRound = document.querySelector('.round')
+const roundTime = () => {
+    countdown = setInterval(()=> {
+        mainRound.textContent = round
+        round--;
+        if (round === -2){ // show zero on screen
+            clearInterval(countdown);            
+            popUp.style.display = "block"
+            wizard.classList.add('wizardShadow')
+            wizard2.classList.add('wizardShadow')
+            // pop up here w/ try again button (try to cast an easier spell)
+            // console.log("try to cast an easier spell")
+            // // replace start button to reset?
+        }
+    }, 1000)
+};
+
+
+
+
+// if input is empty
+// const emptyInput = () => {
+//     let empty = document.querySelector('#inputGuess').value
+//     if(empty === ""){
+//         alert('You forgot to cast a spell!')
+//         reloadPage()
+//         return false
+//     }
+// }
+/********************************************************************************** TESTING */
+
+// let form = document.querySelector('.form')
+
+// form.addEventListener('submit', e => {
+//     if(input.value === '' || input.value === null){
+//         e.preventDefault();
+//     }else{
+//         return true;
+//     }
+// })
+
+
+/********************************************************************************** TESTING */
+
+const letterFound = (letter, index) => {
+        let word = words[currentPlayer - 1];
+        let spellCast = wordSpell[currentPlayer - 1];
+
+        let spell = "";
+        for(let i = 0; i < word.length; i++){
+
+            console.log(`correct letter: ${letter}`)
+
+            if(letter === ''){
+                confirm('continue?')
+                playerSwitch();
+            }
+
+            if(index !== i){
+                spell += spellCast[i] // letter that was there
+            }else{ // if letter/word input is same
+                spell += word[i]; // replaces underscore with letter at that position
+            }
+        };
+
+        wordSpell[currentPlayer - 1] = spell;
+        // replace _ with found letter
+        words[currentPlayer - 1] = word.replace(letter, '_');
+        console.log(`takes out correct letter from spell: ${word.replace(letter, '_')}, this: ${letter}`)
+        console.log(words[currentPlayer - 1], "rest of the letters to guess")
+        // if index -1, letter no longer found (avoid repetition of entering same letter)
+        index = words[currentPlayer - 1].indexOf(letter);
+        console.log("correct letter in array now on screen", wordSpell[currentPlayer - 1])
+
+        // if win
+        let checker = true; // win state
+        let sample = words[currentPlayer - 1].split(''); // array of letters from spell casted (word)
+        sample.forEach(bet => {
+            if (bet != '_') {
+                checker = false; // not win, still letters missing
+            }
+        });
+        if (checker == true) { // all letters accounted for
+
+            setTimeout(()=>{ // win screen
+                gameScreenBody.style.display = "none"
+                winScreen.classList.toggle('appear')
+                console.log('did it?');
+            }, 2000);
+        }
+};

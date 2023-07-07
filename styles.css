@@ -17,7 +17,6 @@ body {
     flex-direction: row !important; /* responsiveness*/
     padding: 30px;
 }
-
 /* device */
 .deviceBody {
     border: solid rgb(68, 170, 210);
@@ -29,7 +28,6 @@ body {
 .screenWrapper {
     /* border: solid salmon; */
     border-radius: 5px;
-    /* background-image: url(images/turqouiseSky.gif); */
     background-color: rgb(71, 172, 247);
     background-image: url(images/castle.png);
     background-size: contain;
@@ -42,7 +40,7 @@ body {
 .sparkles{
     height: 70px;
     width: auto;
-    margin-left: 30px;
+    margin-left: 5px;
 }
 .rightSparkle {
     transform: rotate(90deg);
@@ -72,7 +70,7 @@ body {
 .rulesDesc{
     border-radius: 5px;
     width: 100%;
-    height: 77%;
+    height: 87%;
     margin-top: 35px;
     padding: 15px;
     background-color: (255, 255, 255, 2);
@@ -85,7 +83,7 @@ body {
     color: rgb(253, 219, 23);
     text-shadow: 1px 1px 5px rgb(79, 69, 13);
     font-size: 60px;
-    margin-top: 25px;
+    margin-top: 5px;
 }
 .rules > * {
     margin-block-start: 15px;
@@ -103,13 +101,13 @@ body {
     text-shadow: 1px 1px 3px rgb(11, 12, 60);
     text-transform: capitalize;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 25px;
 }
 .playDesc {
     font-family: 'Lancelot', cursive;
     font-style: italic;
-    font-size: 25px;
-    text-align: left;
+    font-size: 20px;
+    text-align: center;
     text-shadow: 2px 2.5px 5px rgb(27, 30, 32);
 }
 .startPlayButton {
@@ -205,15 +203,22 @@ body {
 /* word container */
 .wordContainer{
     /* border: solid plum; */
-    /* background-color: rgb(113, 133, 140); */
     background-image: url(images/border.png);
     background-repeat: no-repeat;
     background-size: contain;
-    height: 70%;
+    height: 60%;
     width: 99%;
-    margin: 10px 0 0 4px;
-    padding: 50px 20px 0 20px;
+    margin: 10px 0 0 10px;
+    padding: 50px 20px 0 10px;
 }
+
+/* .round {
+    border: solid blue;
+    height: 20px;
+    font-size: 20px;
+    color: whitesmoke;
+} */
+
 .word {
     /* border: solid palevioletred; */
     width: 100%;
@@ -226,7 +231,6 @@ body {
 }
 .scoreBox {
     /* border: solid orangered; */
-    /* width: 100%; */
     height: 40%;
     display: flex;
     flex-direction: row-reverse;
@@ -235,8 +239,8 @@ body {
 .statusP{
     /* border: solid hotpink; */
     margin-top: -5px;
-    width: 75%;
-    font-size: 15px;
+    width: 70%;
+    font-size: 14px;
     color: #000000;
     position: absolute;
     line-height: 1.4em;
@@ -251,7 +255,7 @@ body {
 }
 #wizard {
     /* border: solid red; */
-    height: 150px;
+    height: 130px;
     z-index: 99;
     position: absolute;
     margin-top: 20px;
@@ -259,12 +263,12 @@ body {
 }
 #wizard2 {
     /* border: solid fuchsia; */
-    height: 150px;
+    height: 130px;
     width: auto;
     z-index: 99;
     position: absolute;
     right: 35px;
-    bottom: 290px;
+    bottom: 200px;
 }
 .wizardShadow {
     filter: drop-shadow(0 0 0.75rem #dc143c);
@@ -276,23 +280,23 @@ body {
     width: 100%;
     height: 50%;
     font-family: 'Press Start 2P', cursive;
+    margin-top: -40px;
 }
 .playBox {
     /* border: solid magenta; */
-    width: 90%;
+    width: 86%;
     height: 50px;
     text-align: center;
-    margin: -5px 0 0 25px;
+    margin: -5px 0 0 28px;
     padding-top: 10px;
     /* float: right; */
     background-color: rgb(57, 138, 40);
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     box-shadow: 1px 1.5px 5px rgb(61, 73, 79);
-
 }
 .currentPlayer {
-    font-size: 25px;
+    font-size: 22px;
     color: cornsilk;
     text-shadow:2px 2.5px 2px rgb(34, 16, 21);
     position: absolute;
@@ -322,7 +326,7 @@ body {
     width: 100%;
     height: auto;
     font-size: 12px;
-    margin: 40px 0 50px 0;
+    margin: -13px 0 50px 0;
     padding: 5px;
     display: none;
     box-shadow: inset 0 0 0 2000px rgba(255,255,255,0.3);
@@ -355,14 +359,15 @@ body {
 }
 .inputBox {
     /* border: solid rebeccapurple; */
-    margin-left: -10px;
+    margin-left: -15px;
+    margin-top: -20px;
     text-align: center;
 }
-.typeHere {
+/* .typeHere {
     font-size: 15px;
-}
+} */
 .inputLabel{
-    font-size: 12px;
+    font-size: 10px;
     color: #000;
     width: 100%;
     box-shadow: inset 0 0 0 2000px rgba(255,255,255,0.3);
@@ -399,7 +404,7 @@ body {
     /* border: solid greenyellow; */
     display: flex;
     justify-content: space-evenly;
-    margin-top: 20px;
+    margin-top: 10px;
     position: static; /* ?keep */
 }
 .buttons > button {
@@ -454,26 +459,21 @@ body {
 .timeContainer {
     /* border: solid darkmagenta; */
     /* text-align: center; */
-    margin-top: 15px;
+    /* margin-top: 15px; */
 }
 .countdown {
     width: 60%;
-    margin-left: 70px;
+    margin-top: -15px;
+    margin-left: 100px;
     color: #000;
-    font-size: 20px;
+    font-size: 15px;
     box-shadow: inset 0 0 0 2000px rgba(255,255,255,0.3);
     border-radius: 10px;
 }
 .countdown > span {
     color: crimson;
-    font-size: 22px;
+    font-size: 15px;
 }
-
-
-
-/* source */
-/* color: rgb(103, 124, 135);
-text-shadow: 1px 1px 2px rgb(54, 105, 126); */
 
 /* element show/no show */
 .hide {
@@ -482,9 +482,98 @@ text-shadow: 1px 1px 2px rgb(54, 105, 126); */
 .appear {
     display: block;
 }
-
-/* 
-TO DO:
-1. FIX main page - wording/story
-2. add link to github
- */
+/* DESKTOP */
+ @media screen and (min-width: 1024px) {
+    body{
+        padding-top: 40px;
+        display: flex;
+        justify-content: center;
+    }
+    .deviceBody {
+        width: 30%;
+    }
+/**************************************************/
+    /* RULES SCREEN */
+    .sparkles{
+        margin-left: -10px;
+    }
+    .rightSparkle {
+        margin-left: 140px;
+    }
+    .rulesScreen {
+        padding: 40px;
+    }
+    .rulesDesc{
+        height: 90%;
+        margin-top: 10px;
+        padding: 15px;
+    }
+    .playDesc {
+        font-size: 20px;
+    }
+    .playReady {
+        font-size: 25px;        margin-top: 20px;
+    }
+    /* RULES SCREEN */
+/**************************************************/
+    /* word container */
+    .wordContainer{
+        /* height: 60%; */
+        width: 95%;
+        margin: 10px 0 0 10px;
+    }
+    .word {
+        margin-left: 8px;
+        font-size: 18px;
+    }
+    .playBox {
+        width: 87%;
+        margin: -15px 0 0 27px;
+    }
+    .statusP{
+        width: 22%;
+        font-size: 14px;
+        margin-left: 12px;
+    }
+    .scoreBox {
+        height: 35%;
+    }
+    .currentStatus {
+        margin-right: 57px;
+        width: 60%;
+    }
+    #wizard {
+        height: 130px;
+        margin-top: 20px;
+        left: 515px;
+    }
+    #wizard2 {
+        height: 130px;
+        right: 510px;
+        bottom: 195px;
+    }
+    .currentPlayer {
+        font-size: 22px;
+        margin: 25px 90px 0 0;
+    }
+/******************************************/
+    .countdown {
+        width: 55%;
+        margin-top: 0px;
+        margin-left: 100px;
+        font-size: 14px;
+    }
+    .countdown > span {
+        font-size: 15px;
+    }
+    .inputWrapper {
+        width: 80%;
+        margin-left: 40px;
+    }
+/********************************************/
+    .rulesRecap {
+        border: solid lawngreen;
+        height: 295px;
+        margin: -23px 0 -60px 0;
+    }
+}

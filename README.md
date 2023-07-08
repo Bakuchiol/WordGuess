@@ -17,7 +17,9 @@ From the many choices of games to make or recreate, I chose a word guessing game
 The process was challenging but also enjoyable as I learned new methods I was able to implement in the game.
 
 # Bugs
-???
+- Did not implement a function to prevent empty words.
+- Entering a blank answer in phase 2 leads to an error.
+- Game play could be improved i.e. spell check, character limit
 
 # Project resources
 Hangman tutorial used as reference: https://youtu.be/-qd5sjOfgYY  

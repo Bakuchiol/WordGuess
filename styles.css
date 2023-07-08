@@ -456,11 +456,11 @@ body {
     margin-block-start: 15px;
 }
 /* TIMER */
-.timeContainer {
-    /* border: solid darkmagenta; */
-    /* text-align: center; */
-    /* margin-top: 15px; */
-}
+/* .timeContainer {
+    border: solid darkmagenta;
+    text-align: center;
+    margin-top: 15px;
+} */
 .countdown {
     width: 60%;
     margin-top: -15px;
@@ -482,7 +482,9 @@ body {
 .appear {
     display: block;
 }
-/* DESKTOP */
+/**************************************************/
+/******************* DESKTOP *********************/
+/************************************************/
  @media screen and (min-width: 1024px) {
     body{
         padding-top: 40px;
@@ -492,7 +494,6 @@ body {
     .deviceBody {
         width: 30%;
     }
-/**************************************************/
     /* RULES SCREEN */
     .sparkles{
         margin-left: -10px;
@@ -512,10 +513,9 @@ body {
         font-size: 20px;
     }
     .playReady {
-        font-size: 25px;        margin-top: 20px;
+        font-size: 25px;
+        margin-top: 20px;
     }
-    /* RULES SCREEN */
-/**************************************************/
     /* word container */
     .wordContainer{
         /* height: 60%; */
@@ -556,7 +556,6 @@ body {
         font-size: 22px;
         margin: 25px 90px 0 0;
     }
-/******************************************/
     .countdown {
         width: 55%;
         margin-top: 0px;
@@ -570,7 +569,6 @@ body {
         width: 80%;
         margin-left: 40px;
     }
-/********************************************/
     .rulesRecap {
         border: solid lawngreen;
         height: 295px;

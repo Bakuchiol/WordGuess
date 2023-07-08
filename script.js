@@ -321,3 +321,17 @@ const letterFound = (letter, index) => {
             }, 2000);
         }
 };
+
+
+// let clue = prompt("Enter a hint:");
+        // let wordHint = document.getElementById('inputGuess')
+        // let castHint = document.querySelector('.round')
+        // if(clue != null && clue.length !== 0){
+        //     castHint.textContent = clue
+        // }
+
+        let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        let master = alphabet.split('')
+        if(master.includes(e)){
+            console.log("wooorrkkk?: ", e)
+        }

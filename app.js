@@ -62,7 +62,7 @@ let currentPlayer = 1; // initial player one
 let standing = false; //status at start phase 1 /phase 2
 let count = 15;
 let countdown;
-let round = 60;
+// let round = 60;
 
 /******************************************************* GAME FUNCTIONALITY */
 // start game
@@ -117,9 +117,9 @@ const guessWord = () => {
     /**** 1st phase */
     if(standing === false){
 
+
         words.unshift(input.value.toLowerCase()); //stores input value
         
-
         // words as spells hidden
         let spell = "";
         for(let i = 0; i < input.value.length; i++){
@@ -172,6 +172,7 @@ const guessWord = () => {
 
 // swap players
 const playerSwitch = () => {
+
     if(currentPlayer === 1){
         currentPlayer = 2;
         player.textContent = "2" // win screen
@@ -188,6 +189,7 @@ const playerSwitch = () => {
         wizard.classList.add('wizardShadow')
         wizard2.classList.remove('wizardShadow')
         currentStatus.style.transform = "scaleX(1)"
+
     }
     // update player number
     playerNumber.textContent = currentPlayer;

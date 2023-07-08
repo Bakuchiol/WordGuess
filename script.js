@@ -330,8 +330,8 @@ const letterFound = (letter, index) => {
         //     castHint.textContent = clue
         // }
 
-        let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-        let master = alphabet.split('')
-        if(master.includes(e)){
-            console.log("wooorrkkk?: ", e)
-        }
+        // let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        // let master = alphabet.split('')
+        // if(master.includes(e)){
+        //     console.log("wooorrkkk?: ", e)
+        // }

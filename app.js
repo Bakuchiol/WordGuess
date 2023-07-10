@@ -11,6 +11,7 @@ let selectBtn2 = document.querySelector('.selectBtn2');
 let buttons = document.querySelector('.buttons');
 let timeContainer = document.querySelector('.timeContainer');
 let inputLabel = document.querySelector('.inputLabel');
+let reminder = document.querySelector('.statusP')
 let popUp = document.querySelector('.popWrapper');
 /*********************************************************************** DOM STYLING */
 // select button
@@ -73,8 +74,8 @@ const startGame = () => {
     gameScreenTop.classList.add('appear');
 }
 
-/******************************* TESTING */
-// timer and popUp
+/******************************************************* TIMER */
+// timer and popUp - OLD
 const timer = () => {
     countdown = setInterval(()=> {
         numdown.textContent = count
@@ -92,7 +93,7 @@ const timer = () => {
         }
     }, 1000)
 };
-// take turns
+// take turns - NEW
 const restartCount = () => {
     count = 15;
     // clearInterval(countdown)
@@ -101,22 +102,23 @@ const restartCount = () => {
     playerSwitch()
     spellCast.textContent = wordSpell[currentPlayer - 1]
 }
-
+/******************************************************* ENTER KEY */
 // trigger button click on ENTER - W3 schools
 input.addEventListener('keypress', function(e) {
+
     if(e.key == "Enter"){
         e.preventDefault();
         guessButton.click()
     }
 });
 
+/******************************************************* PHASE & GUESS */
 // event listener for guess button
 const guessWord = () => {
     // console.log(input.value);
     // define game status/standing - players storing words
     /**** 1st phase */
     if(standing === false){
-
 
         words.unshift(input.value.toLowerCase()); //stores input value
         
@@ -133,30 +135,29 @@ const guessWord = () => {
         playerSwitch();
         /**** 2nd phase */
         if(words.length === 2){ // two words in storage
+            standing = true;
             timer();
 
-            let reminder = document.querySelector('.statusP')
             reminder.textContent = `Guess your opponent's spell!`
             wordClue();
-            standing = true; // players already playing game
+            // standing = true; // players already playing game
         }
     }else{
         //make sure wordClue is executed PROGRAM STATUS2
-        // check if letter found in spell(word)
+        // check if letter found in spell(word) (if already guessed)
         let letter = input.value.toLowerCase() // letter/word player guessed
-        let spell = words[currentPlayer - 1]// spell(word) player entered
+        let spell = words[currentPlayer - 1]// spell(word) player trying to guess
         //checks word if letter is there
         let index = spell.indexOf(letter) // finds letter and stores inside variable index
         //if letter not found
-
+        // indexOf = returns -1 if element is not present
+        // if found: show up in corresponding index in word
         if(index !== -1){
             letterFound(letter, index);
-
         }else{
             spellCast.textContent = spell
             // playerSwitch()
             
-
             console.log('switched player wrong guess')
             console.log(`wrong letter: ${letter}`)
         }
@@ -170,6 +171,7 @@ const guessWord = () => {
     }
 };
 
+/******************************************************* SWAP PLAYERS */
 // swap players
 const playerSwitch = () => {
 
@@ -215,9 +217,9 @@ const wordClue = () => {
     console.log(`opponent word on screen: ${spell}`)
 }
 
-// // function to check if letter is found in word
+// function to check if letter is found in word
 const letterFound = (letter, index) => {
-    do {
+    while(index !== -1) {
         let word = words[currentPlayer - 1];
         let spellCast = wordSpell[currentPlayer - 1];
 
@@ -227,7 +229,7 @@ const letterFound = (letter, index) => {
             console.log(`correct letter: ${letter}`)
 
             if(index !== i){
-                spell += spellCast[i] // letter that was there
+                spell += spellCast[i] // keep _
             }else{ // if letter/word input is same
                 spell += word[i]; // replaces underscore with letter at that position
             }
@@ -239,14 +241,14 @@ const letterFound = (letter, index) => {
 //     }
 //      /* TEST */
         wordSpell[currentPlayer - 1] = spell;
-        // replace _ with found letter
+        // replace _ with found letter / prevents guessing same letter
         words[currentPlayer - 1] = word.replace(letter, '_');
         console.log(`takes out correct letter from spell: ${word.replace(letter, '_')}, this: ${letter}`)
         console.log(words[currentPlayer - 1], "rest of the letters to guess")
         // if index -1, letter no longer found (avoid repetition of entering same letter)
+        // i.g. boss (2 s but only need to type s once)
         index = words[currentPlayer - 1].indexOf(letter);
         console.log("correct letter in array now on screen", wordSpell[currentPlayer - 1])
-        console.log("the index:: ",index)
 
 
         // if win
@@ -263,10 +265,10 @@ const letterFound = (letter, index) => {
                 gameScreenBody.style.display = "none"
                 winScreen.classList.toggle('appear')
                 clearInterval(countdown)
-                console.log('did it?');
-            }, 2000);
+                console.log('🏆 WIN! 🏆');
+            }, 1200);
         }
-    } while(index !== -1) //get out of loop , still letters in array
+    }
 };
 
 
